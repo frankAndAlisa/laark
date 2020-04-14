@@ -1,0 +1,41 @@
+.description {
+    min-height: 100vh;
+    background: linear-gradient(170deg, $darkColor 30%, $primaryLightGrey 17.5%,  $primaryLightGrey 17.5%,  $primaryLightGrey 17.5%, $primaryLightGrey 17.5%);
+
+    .descriptionHeading {
+        padding-top: 10vh;
+        h2 {
+            color: $primaryLightGrey;
+            .highlight {
+                color: $accentColor;
+            }
+        }
+    }
+    
+    .descriptionContent {
+        padding: 8vh 10vh;
+        .bigger {
+            font-size: 5rem;
+            font-weight: 700;
+        }
+
+        .accent {
+            color: $accentColor;
+            font-weight: 700;
+        }
+
+        .italics {
+            color: $accentColor;
+            font-weight: bolder;
+
+        }
+
+        .descriptionCredit {
+            margin-top: 60px;
+            p {
+                font-size: 1.8rem;
+                margin: 0;
+            }
+        }
+    }
+}

@@ -252,8 +252,64 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+h2 {
+  font-size: 6.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+p {
+  font-size: 2.5rem;
+  line-height: 40px;
+}
+
 .wrapper {
   margin: 0 auto;
   max-width: 1280px;
   width: 90%;
+}
+
+.description {
+  min-height: 100vh;
+  background: linear-gradient(170deg, #15171A 30%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%);
+}
+
+.description .descriptionHeading {
+  padding-top: 10vh;
+}
+
+.description .descriptionHeading h2 {
+  color: #AEAEB3;
+}
+
+.description .descriptionHeading h2 .highlight {
+  color: #A03B1C;
+}
+
+.description .descriptionContent {
+  padding: 8vh 10vh;
+}
+
+.description .descriptionContent .bigger {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.description .descriptionContent .accent {
+  color: #A03B1C;
+  font-weight: 700;
+}
+
+.description .descriptionContent .italics {
+  color: #A03B1C;
+  font-weight: bolder;
+}
+
+.description .descriptionContent .descriptionCredit {
+  margin-top: 60px;
+}
+
+.description .descriptionContent .descriptionCredit p {
+  font-size: 1.8rem;
+  margin: 0;
 }
