@@ -1,0 +1,25 @@
+// FONTS
+$primaryFont: 'Courier New', Courier, monospace;
+// $secondaryFont: 'Montserrat', sans-serif;
+
+// COLORS
+// $primaryColor: rgb(12, 70, 106) ;
+$secondaryColor: hsl(208, 71%, 50%);
+
+$lighterColor: antiquewhite;
+// $darkColor: rgba(51, 55, 69, 1);
+
+// $accentColor:  rgb(255, 245, 134);
+
+// MIXINS
+// @mixin circle($size: 50px, $color: $primaryColor){
+//     // height & width are the same for circle
+//     // $lightColor is default
+//     width: #{$size}; 
+//     height: #{$size};
+//     background-color: #{$color}; 
+//     border-radius: 50%;
+//     text-align: center;
+//     display: flex; //enabling vertical centering
+//     flex-direction: column;
+// }

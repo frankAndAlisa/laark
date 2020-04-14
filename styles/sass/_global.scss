@@ -1,0 +1,32 @@
+// Global Styles
+html {
+    // font-size: 125%;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $lighterColor;
+    font-family: $primaryFont;
+    text-align: center;
+    // font-family: $secondaryFont;
+    // BASE FONTS & Smoothing
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// WRAPPER
+.wrapper {
+    margin: 0 auto;
+    max-width: 1280;
+    width: 96%;
+}
+
+
+h1 {
+    font-size: 3rem;
+    color: brown;
+}
+
+p {
+    font-size: 1.2rem;
+}
