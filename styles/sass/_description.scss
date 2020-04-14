@@ -13,9 +13,10 @@
     }
     
     .descriptionContent {
-        padding: 10vh 8vh;
+        padding: 8vh 10vh;
         .bigger {
             font-size: 5rem;
+            font-weight: 700;
         }
 
         .accent {
@@ -27,6 +28,14 @@
             color: $accentColor;
             font-weight: bolder;
 
+        }
+
+        .descriptionCredit {
+            margin-top: 60px;
+            p {
+                font-size: 1.8rem;
+                margin: 0;
+            }
         }
     }
 }

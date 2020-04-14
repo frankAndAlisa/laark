@@ -255,10 +255,12 @@ body {
 h2 {
   font-size: 6.5rem;
   text-transform: uppercase;
+  font-weight: 400;
 }
 
 p {
   font-size: 2.5rem;
+  line-height: 40px;
 }
 
 .wrapper {
@@ -285,11 +287,12 @@ p {
 }
 
 .description .descriptionContent {
-  padding: 10vh 8vh;
+  padding: 8vh 10vh;
 }
 
 .description .descriptionContent .bigger {
   font-size: 5rem;
+  font-weight: 700;
 }
 
 .description .descriptionContent .accent {
@@ -300,4 +303,13 @@ p {
 .description .descriptionContent .italics {
   color: #A03B1C;
   font-weight: bolder;
+}
+
+.description .descriptionContent .descriptionCredit {
+  margin-top: 60px;
+}
+
+.description .descriptionContent .descriptionCredit p {
+  font-size: 1.8rem;
+  margin: 0;
 }
