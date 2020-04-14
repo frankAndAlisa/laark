@@ -249,24 +249,11 @@ html {
 }
 
 body {
-  background-color: antiquewhite;
-  font-family: "Courier New", Courier, monospace;
-  text-align: center;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Montserrat", sans-serif;
 }
 
 .wrapper {
   margin: 0 auto;
-  max-width: 1280;
-  width: 96%;
-}
-
-h1 {
-  font-size: 3rem;
-  color: brown;
-}
-
-p {
-  font-size: 1.2rem;
+  max-width: 1280px;
+  width: 90%;
 }

@@ -1,15 +1,15 @@
 // FONTS
-$primaryFont: 'Courier New', Courier, monospace;
-// $secondaryFont: 'Montserrat', sans-serif;
+$primaryFont: 'Playfair Display', serif;
+$secondaryFont:'Montserrat', sans-serif;
 
 // COLORS
-// $primaryColor: rgb(12, 70, 106) ;
-$secondaryColor: hsl(208, 71%, 50%);
+$accentColor: #A03B1C;
+$darkColor: #15171A; 
+$primaryLightGrey: #AEAEB3;
+$secondaryDarkGrey: #6B686C;
 
-$lighterColor: antiquewhite;
-// $darkColor: rgba(51, 55, 69, 1);
 
-// $accentColor:  rgb(255, 245, 134);
+
 
 // MIXINS
 // @mixin circle($size: 50px, $color: $primaryColor){
