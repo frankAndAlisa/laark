@@ -1,0 +1,32 @@
+.description {
+    min-height: 100vh;
+    background: linear-gradient(170deg, $darkColor 30%, $primaryLightGrey 17.5%,  $primaryLightGrey 17.5%,  $primaryLightGrey 17.5%, $primaryLightGrey 17.5%);
+
+    .descriptionHeading {
+        padding-top: 10vh;
+        h2 {
+            color: $primaryLightGrey;
+            .highlight {
+                color: $accentColor;
+            }
+        }
+    }
+    
+    .descriptionContent {
+        padding: 10vh 8vh;
+        .bigger {
+            font-size: 5rem;
+        }
+
+        .accent {
+            color: $accentColor;
+            font-weight: 700;
+        }
+
+        .italics {
+            color: $accentColor;
+            font-weight: bolder;
+
+        }
+    }
+}

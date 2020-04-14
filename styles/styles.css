@@ -252,8 +252,52 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+h2 {
+  font-size: 6.5rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 2.5rem;
+}
+
 .wrapper {
   margin: 0 auto;
   max-width: 1280px;
   width: 90%;
+}
+
+.description {
+  min-height: 100vh;
+  background: linear-gradient(170deg, #15171A 30%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%);
+}
+
+.description .descriptionHeading {
+  padding-top: 10vh;
+}
+
+.description .descriptionHeading h2 {
+  color: #AEAEB3;
+}
+
+.description .descriptionHeading h2 .highlight {
+  color: #A03B1C;
+}
+
+.description .descriptionContent {
+  padding: 10vh 8vh;
+}
+
+.description .descriptionContent .bigger {
+  font-size: 5rem;
+}
+
+.description .descriptionContent .accent {
+  color: #A03B1C;
+  font-weight: 700;
+}
+
+.description .descriptionContent .italics {
+  color: #A03B1C;
+  font-weight: bolder;
 }

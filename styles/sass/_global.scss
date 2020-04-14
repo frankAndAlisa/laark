@@ -7,6 +7,15 @@ body {
     font-family: $secondaryFont;
 }
 
+h2 {
+    font-size: 6.5rem;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 2.5rem;
+}
+
 // WRAPPER
 .wrapper {
     margin: 0 auto;
