@@ -108,10 +108,11 @@ h1{
     border: 1px solid $darkColor;
     margin-top: 40vh;
         h4{
-            font: $secondaryFont;
+            font-family: $secondaryFont;
             font-size: 3.2rem;
             font-weight: 300;
             margin: 0;
+            text-transform: uppercase;
         }
 }
 
