@@ -7,10 +7,31 @@ body {
     font-family: $secondaryFont;
 }
 
+//  TEXT STYLING
+h1 {
+    font-family: $primaryFont;
+    font-weight: 500;
+    letter-spacing: .4rem;
+    text-transform: uppercase;
+    color: $darkColor;
+    font-size: 21.8rem;
+    padding: 0;
+    margin: 0;
+        span {
+            color: $accentColor;
+            margin: 0 -8rem;
+            vertical-align: baseline;
+        }
+}
+
+
 h2 {
     font-size: 6.5rem;
     text-transform: uppercase;
     font-weight: 400;
+    // header h2{
+    //     color: $primaryLightGrey;
+    // }
 }
 
 p {
