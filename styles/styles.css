@@ -286,49 +286,24 @@ p {
   width: 90%;
 }
 
-.description {
-  min-height: 100vh;
-  background: linear-gradient(170deg, #15171A 30%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%);
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
-.description .descriptionHeading {
-  padding-top: 10vh;
-}
-
-.description .descriptionHeading h2 {
+.selectButton {
+  border: none;
+  background-color: #15171A;
   color: #AEAEB3;
-}
-
-.description .descriptionHeading h2 .highlight {
-  color: #A03B1C;
-}
-
-.description .descriptionContent {
-  padding: 8vh 10vh;
-}
-
-.description .descriptionContent .bigger {
-  font-size: 5rem;
-  font-weight: 700;
-}
-
-.description .descriptionContent .accent {
-  color: #A03B1C;
-  font-weight: 700;
-}
-
-.description .descriptionContent .italics {
-  color: #A03B1C;
-  font-weight: bolder;
-}
-
-.description .descriptionContent .descriptionCredit {
-  margin-top: 60px;
-}
-
-.description .descriptionContent .descriptionCredit p {
-  font-size: 1.8rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  padding: 0;
   margin: 0;
+  font-size: 2rem;
 }
 
 header {
@@ -468,13 +443,73 @@ h1 {
 }
 
 .browseButton h4 {
-  font: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 3.2rem;
   font-weight: 300;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .browseButton:hover,
 .browseButton:focus-within {
   background-color: #AEAEB3;
+}
+
+.description {
+  min-height: 100vh;
+  background: linear-gradient(170deg, #15171A 30%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%);
+}
+
+.description .descriptionHeading {
+  padding-top: 10vh;
+}
+
+.description .descriptionHeading h2 {
+  color: #AEAEB3;
+}
+
+.description .descriptionHeading h2 .highlight {
+  color: #A03B1C;
+}
+
+.description .descriptionContent {
+  padding: 8vh 10vh;
+}
+
+.description .descriptionContent .bigger {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.description .descriptionContent .accent {
+  color: #A03B1C;
+  font-weight: 700;
+}
+
+.description .descriptionContent .italics {
+  color: #A03B1C;
+  font-weight: bolder;
+}
+
+.description .descriptionContent .descriptionCredit {
+  margin-top: 60px;
+}
+
+.description .descriptionContent .descriptionCredit p {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.selection {
+  height: 100vh;
+  background-color: #15171A;
+  position: relative;
+}
+
+.selectionBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }

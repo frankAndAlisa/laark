@@ -10,6 +10,9 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet"> 
+
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 <body>
     <!-- header starts -->
@@ -72,10 +75,9 @@
         <!-- selection starts -->
         <section class="selection">
             <div class="selectionBox">
-                <label class="hidden" for="themesSelect">Choose a theme</label>
-                <select name="themes" id="themesSelect">
+                <button id="check" class="selectButton" name="selectTheme">Choose a theme</button>
 
-                </select>
+                
             </div>
         </section>
     </main>
@@ -86,5 +88,10 @@
 
     </footer>
     <!-- footer ends -->
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>
+    <!-- script -->
+    <script src="scripts\scripts.js"></script>
 </body>
 </html>
