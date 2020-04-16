@@ -21,9 +21,8 @@ app.dropdownMenu = function() {
         });
         $(`.underline`).removeClass(`hidden`).addClass(`animated zoomIn`);
         $(`.optionsBox`).addClass(`border slower animated fadeIn`)
-    })
+    });
 }
-
 
 // init FUNCTION Calls
 app.init = () => {

@@ -444,7 +444,7 @@ h1 {
 }
 
 .description .descriptionHeading {
-  padding-top: 10vh;
+  padding-top: 15vh;
 }
 
 .description .descriptionHeading h2 {
@@ -456,7 +456,7 @@ h1 {
 }
 
 .description .descriptionContent {
-  padding: 8vh 10vh;
+  padding: 15vh 35vh;
 }
 
 .description .descriptionContent .bigger {
@@ -513,6 +513,7 @@ h1 {
 
 .selectButton {
   font-size: 4.5rem;
+  letter-spacing: 0.5rem;
   border: 1px solid #6B686C;
   padding: 5px 25px;
   cursor: pointer;
@@ -544,8 +545,8 @@ h1 {
           flex-direction: column;
   -ms-flex-item-align: center;
       align-self: center;
-  width: 40%;
-  margin-top: 50px;
+  width: 55%;
+  margin-top: 20px;
   padding: 25px 0px;
 }
 
