@@ -20,7 +20,6 @@ h1 {
         span {
             color: $accentColor;
             margin: 0 -8rem;
-            vertical-align: baseline;
         }
 }
 
@@ -29,21 +28,19 @@ h2 {
     font-size: 6.5rem;
     text-transform: uppercase;
     font-weight: 400;
-    // header h2{
-    //     color: $primaryLightGrey;
-    // }
 }
+
 
 p {
     font-size: 2.5rem;
     line-height: 40px;
 }
 
-// WRAPPER
+// Corrected the wrapper behaviour
 .wrapper {
     margin: 0 auto;
-    max-width: 1280px;
-    width: 90%;
+    width: 1440px;
+    max-width: 90%;
 }
 
 .hidden {
@@ -58,3 +55,4 @@ p {
 .border {
     border: 1px solid $secondaryDarkGrey;
 }
+
