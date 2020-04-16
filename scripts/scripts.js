@@ -12,12 +12,15 @@ const app = {};
 // }
 
 
-// once the select button is clicked => drop the menu down
+// once the select button is clicked => menu is displayed
 app.dropdownMenu = function() {
-    $(`button`).on(`click`, function() {
-        $(`#check`).addClass(`animated fadeIn`).one(`animationend`, function() {
-            $(this).removeClass(`animated fadeIn`)
-        })
+    $(`.selectButton`).on(`click`, function() {
+        $(`.selectButtonBox`).addClass(`smallerMargin`);
+        $(`.option`).removeClass(`hidden`).addClass(`animated zoomIn`).one(`animationend`, function() {
+            $(this).removeClass(`animated fadeInUp`)
+        });
+        $(`.underline`).removeClass(`hidden`).addClass(`animated zoomIn`);
+        $(`.optionsBox`).addClass(`border slower animated fadeIn`)
     })
 }
 

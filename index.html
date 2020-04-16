@@ -75,9 +75,19 @@
         <!-- selection starts -->
         <section class="selection">
             <div class="selectionBox">
-                <button id="check" class="selectButton" name="selectTheme">Choose a theme</button>
-
+                <div class="selectButtonBox">
+                    <button type="button" id="check" class="selectButton" name="selectTheme" value="selectTheme">Choose a theme</button>
+                </div>
                 
+                <div class="optionsBox">
+                    <button type="button" id="animals" class="option optionLeft hidden" name="selectOption" name="selectOption">Animals</button>
+                    <span  class="underline hidden"></span>
+                    <button type="button" id="animals" class="option optionRight hidden" name="selectOption" name="selectOption">People</button>
+                    <span class="underline hidden"></span>
+                    <button type="button" id="animals" class="option optionLeft hidden" name="selectOption" name="selectOption">Nature</button>
+                    <span class="underline hidden"></span>
+                    <button type="button hidden" id="animals" class="option optionRight hidden" name="selectOption" name="selectOption">Objects</button>
+                </div>
             </div>
         </section>
     </main>

@@ -1,15 +1,64 @@
 .selection {
-    height: 100vh;
+    min-height: 100vh;
     background-color: $darkColor;
-    position: relative;
 }
 
 .selectionBox {
-    // display: flex;
-    // justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
 }
 
+.selectButtonBox {
+    align-self: center;
+    margin-top: 25vh;
+    transition: all ease 0.5s;
+}
+
+.smallerMargin {
+    margin-top: 15vh;
+}
+
+.selectButton {
+    font-size: 4.5rem;
+    border: 1px solid $secondaryDarkGrey;
+    padding: 5px 25px;
+    cursor: pointer;
+}
+
+.selectButton::after {
+    content: '▶';
+    color: $primaryLightGrey;
+    font-size: 3rem;
+    display: inline-block;
+    margin-left: 15px;
+    transition: all 0.5s ease;
+    vertical-align: 15%;
+}
+
+.selectButton:hover::after {
+    transform: rotate(90deg);
+}
+
+.optionsBox {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 40%;
+    margin-top: 50px;
+    padding: 25px 0px;
+    // visibility: hidden;
+}
+
+.option {
+    font-family: $primaryFont;
+    margin: 10px 0px;
+    font-size: 6rem;
+}
+
+.underline {
+    height: 2px;
+    width: 350px;
+    background-color: $accentColor;
+    display: inline-block;
+    align-self: center;
+}
