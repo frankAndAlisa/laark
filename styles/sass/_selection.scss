@@ -46,13 +46,18 @@
     width: 40%;
     margin-top: 50px;
     padding: 25px 0px;
-    // visibility: hidden;
 }
 
 .option {
     font-family: $primaryFont;
     margin: 10px 0px;
     font-size: 6rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    font-size: 6.5rem;
 }
 
 .underline {
