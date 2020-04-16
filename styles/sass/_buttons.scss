@@ -1,1 +1,14 @@
 // BUTTONS
+
+// select button
+.selectButton,
+.option {
+    border: none;
+    background-color: $darkColor;
+    color: $primaryLightGrey;
+    font-family: $secondaryFont;
+    text-transform: uppercase;
+    padding:0;
+    margin:0;
+    font-size: 2rem;
+}
