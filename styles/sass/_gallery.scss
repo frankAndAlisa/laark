@@ -1,0 +1,97 @@
+.gallery
+.galleryShapes{
+    height: 100vh;
+    width: 100%; 
+    background-color: $darkColor;
+}
+
+.galleryShapes{
+    z-index: 1;
+    position: absolute; 
+        // &.topShape{            
+        //     background-color:$darkColor;
+        // }
+        &.bottomShape{     
+            background-color:$accentColor;
+            -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+            clip-path: polygon(0 75%, 100% 50%, 100% 100%, 0 100%);
+        }
+}
+
+.galleryContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    justify-items: left;
+    align-items:center;
+    z-index: 2;
+    position: relative;
+    height: 100vh;
+    padding: 8vh 0 8vh 0;
+        h4{
+            grid-column: 1/ 14;
+            grid-row: 1 / 2;
+            font-family: $primaryFont;
+            font-size: 7rem;
+            text-transform: uppercase;
+            padding: 0;
+            margin:0;
+            color: $accentColor;
+                span:first-of-type{ 
+                    color: $secondaryDarkGrey;
+                }
+                span:last-of-type{
+                    color: $primaryLightGrey;
+                }
+        }
+}
+
+.imageContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    align-items:center;
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 8vh 0 8vh 0;
+    border: 2px solid $primaryLightGrey;
+        // .artWorks {
+        //     grid-row: 2 / 3;
+        //     background-color: $secondaryDarkGrey;
+        //     width: 300px;
+        //     height: 400px;
+        // }
+
+}
+
+.artWorks {
+    grid-row: 2 / 3;
+    z-index: 10;
+    background-color: $secondaryDarkGrey;
+    position:relative;
+    width: 300px;
+    height: 400px;
+}
+
+.infoOverlay{
+    display: none;
+}
+
+
+.galleryContainer li:hover .infoOverlay{
+    // height: 100%;
+    // width: 100%;
+    display: flex;
+    position: absolute;
+    z-index:20;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    color: $darkColor;
+    background-color: $darkColor;
+    opacity: 100%;
+}
