@@ -4,10 +4,13 @@ const app = {};
 // ajax key
 app.key = `fbeuXXM5`;
 
+// ajax URL
+app.url = `https://www.rijksmuseum.nl/api/en/collection`;
+
 // ajax call
 app.getArt = () => {
     $.ajax({
-        url: `https://www.rijksmuseum.nl/api/en/collection`,
+        url: app.url,
         method: `GET`,
         dataType: `json`,
         data: {
@@ -29,10 +32,27 @@ app.dropdownMenu = function() {
     });
 }
 
+// MENU LISTENER,
+//     USER selects from a drop down/ menu
+app.themeSelect = function() {
+    $(`.option`).on(`click`, function(){
+        console.log(`hello`);
+    })
+}
+//     MAKE API Call
+//         … determine number to be returned
+//         ….RANDOMIZE, the returned API call
+//     TRACK of NUMBER of Calls
+//     ...CREATE rule for 1st three searches
+//     DOM to display 3  returned images
+//     DOM to display message “ … choose one
+
+
 
 
 // init FUNCTION Calls
 app.init = () => {
+    app.getArt();
     // app.shuffle(app.sourceArray);  // JUST NEED TO supply array
     // app.nextFuction();
     app.dropdownMenu();
@@ -44,6 +64,42 @@ $(() => {
     app.init();
 
 })
+
+
+
+// LISTENER ON IMAGES
+//     USER Must select one
+//         … ERROR Handling, can only select one image
+//         … ERROR Handling, if no images were selected
+
+// LISTENER for REFINED SEARCH
+//     MAKE API call
+//         ….RANDOMIZE, the returned API call
+//     REPLACE, 2 Images in DOM
+//     … interact with DOM, change message “choose your second image”
+//     USER MUST select 2nd image
+//         … ERROR Handling, two images must be selected
+
+// Repeat REFINED SEARCH
+//     MAKE API call
+//         ….RANDOMIZE, the returned API call
+//     REPLACE, 1 Image in DOM
+//    (NOTE: 3 of 3 Searches completed)
+//     … interact with DOM, change message “your selected images”
+
+// OFFER user options,
+//     revise the DOM
+//     … allow OVERLAY, on IMAGES, once initial three searches are completed
+//     … create BUTTON, to KEEP any of the select IMAGES
+//     … create BUTTON for NEW SEARCH / REVISE SEARCH
+//     STRETCH
+//     … create BUTTON, to ADD images to GALLERY   
+//        … create BUTTON, to REVIEW images larger 
+//     … create interactions within the gallery and large image view
+    
+// Provide Link for User Gallery
+//     ( note Gallery is only active during session )
+
 
 
 // EXTRA CODE BITS
