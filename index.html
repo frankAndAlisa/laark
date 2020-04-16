@@ -10,6 +10,9 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet"> 
+
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 <body>
     <!-- header starts -->
@@ -53,7 +56,21 @@
         
         <!-- selection starts -->
         <section class="selection">
-
+            <div class="selectionBox">
+                <div class="selectButtonBox">
+                    <button type="button" id="check" class="selectButton" name="selectTheme" value="selectTheme">Choose a theme</button>
+                </div>
+                
+                <div class="optionsBox">
+                    <button type="button" id="animals" class="option optionLeft hidden" name="selectOption" name="selectOption">Animals</button>
+                    <span  class="underline hidden"></span>
+                    <button type="button" id="animals" class="option optionRight hidden" name="selectOption" name="selectOption">People</button>
+                    <span class="underline hidden"></span>
+                    <button type="button" id="animals" class="option optionLeft hidden" name="selectOption" name="selectOption">Nature</button>
+                    <span class="underline hidden"></span>
+                    <button type="button hidden" id="animals" class="option optionRight hidden" name="selectOption" name="selectOption">Objects</button>
+                </div>
+            </div>
         </section>
     </main>
     <!-- main ends -->
@@ -86,5 +103,10 @@
 
     </footer>
     <!-- footer ends -->
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>
+    <!-- script -->
+    <script src="scripts\scripts.js"></script>
 </body>
 </html>

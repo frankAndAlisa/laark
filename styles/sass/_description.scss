@@ -3,7 +3,7 @@
     background: linear-gradient(170deg, $darkColor 30%, $primaryLightGrey 17.5%,  $primaryLightGrey 17.5%,  $primaryLightGrey 17.5%, $primaryLightGrey 17.5%);
 
     .descriptionHeading {
-        padding-top: 10vh;
+        padding-top: 15vh;
         h2 {
             color: $primaryLightGrey;
             .highlight {
@@ -13,7 +13,7 @@
     }
     
     .descriptionContent {
-        padding: 8vh 10vh;
+        padding: 15vh 35vh;
         .bigger {
             font-size: 5rem;
             font-weight: 700;
