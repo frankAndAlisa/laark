@@ -18,17 +18,17 @@ header {
     width: 100%; 
     // transition: -webkit-clip-path .6s ease-out; /* needs to be prefixed otherwise it's not transitioned in Chrome */
         &.leftShape {
-            opacity: 65%;
-            background-color: $darkColor;
+            // opacity: 65%;
+            background-color: rgba(21, 23, 26, 0.571);
             clip-path: polygon(0 0, 20% 0, 80% 100%, 0% 100%);
             -webkit-clip-path: polygon(0 0, 20% 0, 80% 100%, 0% 100%);
         }
         &.rightShape{
-            opacity: 40%;
-            background-color: rgb(255, 255, 255);
+            // opacity: 40%;
+            background-color: rgba(255, 255, 255, 0.714);
             // background-color: $primaryLightGrey;
             clip-path: polygon(20% 0, 100% 0, 100% 100%, 80% 100%);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%);
+            -webkit-clip-path: polygon(20% 0, 100% 0, 100% 100%, 80% 100%);
         }
 }
 

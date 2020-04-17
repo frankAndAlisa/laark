@@ -330,17 +330,15 @@ header {
 }
 
 .headerShapes.leftShape {
-  opacity: 65%;
-  background-color: #15171A;
+  background-color: rgba(21, 23, 26, 0.571);
   clip-path: polygon(0 0, 20% 0, 80% 100%, 0% 100%);
   -webkit-clip-path: polygon(0 0, 20% 0, 80% 100%, 0% 100%);
 }
 
 .headerShapes.rightShape {
-  opacity: 40%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.714);
   clip-path: polygon(20% 0, 100% 0, 100% 100%, 80% 100%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%);
+  -webkit-clip-path: polygon(20% 0, 100% 0, 100% 100%, 80% 100%);
 }
 
 .headerContainer {
@@ -587,7 +585,7 @@ h1 {
 
 .galleryShapes.bottomShape {
   background-color: #A03B1C;
-  -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 75%, 100% 50%, 100% 100%, 0 100%);
   clip-path: polygon(0 75%, 100% 50%, 100% 100%, 0 100%);
 }
 
