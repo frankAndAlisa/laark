@@ -13,7 +13,7 @@
         // }
         &.bottomShape{     
             background-color:$accentColor;
-            -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+            -webkit-clip-path: polygon(0 75%, 100% 50%, 100% 100%, 0 100%);
             clip-path: polygon(0 75%, 100% 50%, 100% 100%, 0 100%);
         }
 }
