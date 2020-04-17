@@ -251,9 +251,12 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
+h1,
+h3 {
   font-family: "Playfair Display", serif;
   font-weight: 500;
   letter-spacing: .4rem;
@@ -264,15 +267,23 @@ h1 {
   margin: 0;
 }
 
-h1 span {
-  color: #A03B1C;
-  margin: 0 -8rem;
-}
-
-h2 {
+h2,
+h4 {
+  font-family: "Montserrat", sans-serif;
   font-size: 6.5rem;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+h3 {
+  font-size: 7rem;
+  letter-spacing: normal;
+  color: #A03B1C;
+}
+
+h4 {
+  font-size: 3.2rem;
+  font-weight: 300;
 }
 
 p {
@@ -316,8 +327,6 @@ header {
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-filter: brightness(100%) contrast(100%);
-          filter: brightness(100%) contrast(100%);
   background-position: 0 65%;
   background-image: url(../assets/headerBackground5.jpg);
 }
@@ -325,22 +334,22 @@ header {
 .headerShapes {
   z-index: 1;
   position: absolute;
-  height: 100vh;
-  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .headerShapes.leftShape {
-  opacity: 65%;
-  background-color: #15171A;
+  background-color: rgba(21, 23, 26, 0.564);
   clip-path: polygon(0 0, 20% 0, 80% 100%, 0% 100%);
   -webkit-clip-path: polygon(0 0, 20% 0, 80% 100%, 0% 100%);
 }
 
 .headerShapes.rightShape {
-  opacity: 40%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.714);
   clip-path: polygon(20% 0, 100% 0, 100% 100%, 80% 100%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%);
+  -webkit-clip-path: polygon(20% 0, 100% 0, 100% 100%, 80% 100%);
 }
 
 .headerContainer {
@@ -371,6 +380,11 @@ h1 {
       -ms-grid-row-align: start;
       align-self: start;
   margin-top: -4rem;
+}
+
+h1 span {
+  color: #A03B1C;
+  margin: 0 -8rem;
 }
 
 .h2WUnderline {
@@ -429,13 +443,9 @@ h1 {
 }
 
 .browseButton h4 {
-  text-transform: uppercase;
-  font: "Montserrat", sans-serif;
-  font-size: 3.2rem;
-  font-weight: 300;
+  color: #15171A;
   margin: -.3rem;
   padding: 0.5rem .8rem 0rem .8rem;
-  vertical-align: text-bottom;
 }
 
 .description {
@@ -587,7 +597,7 @@ h1 {
 
 .galleryShapes.bottomShape {
   background-color: #A03B1C;
-  -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 75%, 100% 50%, 100% 100%, 0 100%);
   clip-path: polygon(0 75%, 100% 50%, 100% 100%, 0 100%);
 }
 
@@ -608,26 +618,23 @@ h1 {
   padding: 8vh 0 8vh 0;
 }
 
-.galleryContainer h4 {
+.galleryContainer h3 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 13;
   grid-column: 1/ 14;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
-  font-family: "Playfair Display", serif;
   font-size: 7rem;
-  text-transform: uppercase;
   padding: 0;
   margin: 0;
-  color: #A03B1C;
 }
 
-.galleryContainer h4 span:first-of-type {
+.galleryContainer h3 span:first-of-type {
   color: #6B686C;
 }
 
-.galleryContainer h4 span:last-of-type {
+.galleryContainer h3 span:last-of-type {
   color: #AEAEB3;
 }
 
@@ -638,6 +645,8 @@ h1 {
       grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: (1fr)[3];
       grid-template-rows: repeat(3, 1fr);
+  -webkit-column-gap: 2vw;
+          column-gap: 2vw;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -647,7 +656,6 @@ h1 {
   height: 100%;
   width: 100%;
   padding: 8vh 0 8vh 0;
-  border: 2px solid #AEAEB3;
 }
 
 .artWorks {
@@ -657,7 +665,8 @@ h1 {
   z-index: 10;
   background-color: #6B686C;
   position: relative;
-  width: 300px;
+  min-width: 25vw;
+  max-width: 300px;
   height: 400px;
 }
 

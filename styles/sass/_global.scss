@@ -5,10 +5,13 @@ html {
 
 body {
     font-family: $secondaryFont;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 //  TEXT STYLING
-h1 {
+h1,
+h3 {
     font-family: $primaryFont;
     font-weight: 500;
     letter-spacing: .4rem;
@@ -17,19 +20,30 @@ h1 {
     font-size: 21.8rem;
     padding: 0;
     margin: 0;
-        span {
-            color: $accentColor;
-            margin: 0 -8rem;
-        }
+        // span {
+        //     color: $accentColor;
+        //     margin: 0 -8rem;
+        // }
 }
 
-
-h2 {
+h2,
+h4 {
+    font-family: $secondaryFont;
     font-size: 6.5rem;
     text-transform: uppercase;
     font-weight: 400;
 }
 
+h3{
+    font-size: 7rem;
+    letter-spacing: normal;
+    color: $accentColor;
+}
+
+h4{
+    font-size: 3.2rem;
+    font-weight: 300;
+}
 
 p {
     font-size: 2.5rem;
