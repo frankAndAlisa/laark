@@ -34,11 +34,11 @@ app.dropdownMenu = function() {
 
 // MENU LISTENER,
 //     USER selects from a drop down/ menu
-app.themeSelect = function() {
-    $(`.option`).on(`click`, function(){
-        console.log(`hello`);
-    })
-}
+// app.themeSelect = function() {
+//     $(`.option`).on(`click`, function(){
+//         console.log(`hello`);
+//     })
+// }
 //     MAKE API Call
 //         … determine number to be returned
 //         ….RANDOMIZE, the returned API call
