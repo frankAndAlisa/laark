@@ -28,19 +28,19 @@
     position: relative;
     height: 100vh;
     padding: 8vh 0 8vh 0;
-        h4{
+        h3{
             grid-column: 1/ 14;
             grid-row: 1 / 2;
-            font-family: $primaryFont;
+            // font-family: $primaryFont;
             font-size: 7rem;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             padding: 0;
             margin:0;
-            color: $accentColor;
-                span:first-of-type{ 
+            // color: $accentColor;
+                & span:first-of-type{ 
                     color: $secondaryDarkGrey;
                 }
-                span:last-of-type{
+                & span:last-of-type{
                     color: $primaryLightGrey;
                 }
         }
@@ -50,6 +50,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    column-gap: 2vw;
     justify-items: center;
     align-items:center;
     z-index: 2;
@@ -57,7 +58,6 @@
     height: 100%;
     width: 100%;
     padding: 8vh 0 8vh 0;
-    border: 2px solid $primaryLightGrey;
         // .artWorks {
         //     grid-row: 2 / 3;
         //     background-color: $secondaryDarkGrey;
@@ -72,7 +72,8 @@
     z-index: 10;
     background-color: $secondaryDarkGrey;
     position:relative;
-    width: 300px;
+    min-width: 25vw;
+    max-width: 300px;
     height: 400px;
 }
 

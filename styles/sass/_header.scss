@@ -53,6 +53,10 @@ h1{
     grid-row: 2 / 3;
     align-self: start;
     margin-top: -4rem;
+        & span {
+            color: $accentColor;
+            margin: 0 -8rem;
+        }
 }
 
 .h2WUnderline {
@@ -93,12 +97,8 @@ h1{
             font-weight: 400;
         }        
         h4{
-            text-transform: uppercase;
-            font: $secondaryFont;
-            font-size: 3.2rem;
-            font-weight: 300;
+            color: $darkColor;
             margin: -.3rem;
             padding: 0.5rem .8rem 0rem .8rem;
-            vertical-align: text-bottom;
         }
 }
