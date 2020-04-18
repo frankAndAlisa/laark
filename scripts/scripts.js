@@ -3,10 +3,8 @@ const app = {};
 
 // ajax key
 app.key = `fbeuXXM5`;
-
 // ajax URL
 app.url = `https://www.rijksmuseum.nl/api/en/collection`;
-
 // ajax call
 app.getArt = () => {
     $.ajax({
@@ -15,10 +13,23 @@ app.getArt = () => {
         dataType: `json`,
         data: {
             key: app.key,
-            format: `json` 
+            format: `json`, 
+            // testing the call
+            q: `Object`
         }
-    })
+    }).then((result) => {
+        console.log(result);
+    });
 }
+
+// culture: (nl / en) The language to search in (and of the results).
+// q: (a-z) The search terms that need to occur in one of the fields of the object data.
+// involvedMaker: (a-z) Object needs to be made by this agent.
+// type: (a-z) The type of the object.
+// materia: (a-z) The material of the object.
+// technique: (a-z) The technique used to make the object.
+// f.dating.period: 	(0-21) The century in which the object is made.
+// f.normalized32Colors.hex: (Color HEX) Colors found in the images (mind: The # in #FF0000 should be url-encoded!).
 
 // once the select button is clicked => menu is displayed
 app.dropdownMenu = function() {
