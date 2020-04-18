@@ -265,6 +265,8 @@ h3 {
   font-size: 21.8rem;
   padding: 0;
   margin: 0;
+  -webkit-transition: all 0s ease;
+  transition: all 0s ease;
 }
 
 h2,
@@ -323,33 +325,12 @@ p {
 }
 
 header {
-  width: 100%;
-  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 65%;
-  background-image: url(../assets/headerBackground5.jpg);
-}
-
-.headerShapes {
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.headerShapes.leftShape {
-  background-color: rgba(21, 23, 26, 0.564);
-  clip-path: polygon(0 0, 20% 0, 80% 100%, 0% 100%);
-  -webkit-clip-path: polygon(0 0, 20% 0, 80% 100%, 0% 100%);
-}
-
-.headerShapes.rightShape {
-  background-color: rgba(255, 255, 255, 0.714);
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 80% 100%);
-  -webkit-clip-path: polygon(20% 0, 100% 0, 100% 100%, 80% 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#15171a",endColorstr="#ffffff",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#15171a",endColorstr="#ffffff",GradientType=1), url(../assets/headerBackground5.jpg);
+  background-image: linear-gradient(60deg, rgba(21, 23, 26, 0.8) 0%, rgba(21, 23, 26, 0.6) 50%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.9) 100%), url(../assets/headerBackground5.jpg);
 }
 
 .headerContainer {
@@ -379,7 +360,7 @@ h1 {
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
-  margin-top: -4rem;
+  margin-top: -2%;
 }
 
 h1 span {
@@ -430,22 +411,29 @@ h1 span {
   margin: 0;
   padding: 0;
   color: #15171A;
-  background-color: #4d4d4d;
+  background-color: #6d6d6d64;
   border: 1px solid #15171A;
-  -webkit-transition: all .3s ease-in;
-  transition: all .3s ease-in;
-}
-
-.browseButton:hover, .browseButton:focus-within {
-  color: #AEAEB3;
-  background-color: #15171A;
-  font-weight: 400;
+  -webkit-transition: all 0.5s cubic-bezier(0.6, 0.01, 0.85, 0.75);
+  transition: all 0.5s cubic-bezier(0.6, 0.01, 0.85, 0.75);
+  color: #15171A;
 }
 
 .browseButton h4 {
   color: #15171A;
   margin: -.3rem;
-  padding: 0.5rem .8rem 0rem .8rem;
+  padding: 0.1rem .8rem 0rem .8rem;
+}
+
+.browseButton:hover, .browseButton:focus-within {
+  background-color: #15171A;
+  font-weight: 400;
+  border: 1px solid #AEAEB3;
+}
+
+.browseButton:hover h4,
+.browseButton:focus-within h4 {
+  color: #AEAEB3;
+  font-weight: 400;
 }
 
 .description {
@@ -695,5 +683,10 @@ h1 span {
   }
   h1 span {
     margin: 0 -5rem;
+  }
+  h2 {
+    font-size: 5.5rem;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
 }
