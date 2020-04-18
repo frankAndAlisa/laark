@@ -20,10 +20,7 @@ h3 {
     font-size: 21.8rem;
     padding: 0;
     margin: 0;
-        // span {
-        //     color: $accentColor;
-        //     margin: 0 -8rem;
-        // }
+    transition: all 0s ease;
 }
 
 h2,
@@ -33,6 +30,7 @@ h4 {
     text-transform: uppercase;
     font-weight: 400;
 }
+
 
 h3{
     font-size: 7rem;
