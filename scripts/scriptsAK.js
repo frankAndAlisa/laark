@@ -1,17 +1,10 @@
-// hi alisa! // // namespacing
+// hi Frank!// // namespacing
 const app = {};
 
 // ajax key
 app.key = `fbeuXXM5`;
 // ajax URL
 app.url = `https://www.rijksmuseum.nl/api/en/collection`;
-
-app.searchTerm = [ 
-    themeOne = `animals`,
-    themeTwo = `people`,
-    themeThree = `nature`,
-    themeFour = `objects`
-];
 
 app.shuffle = function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -21,7 +14,7 @@ app.shuffle = function shuffle(array) {
 }
 
 // ajax call
-app.getArt = () => {
+app.getArt = (search) => {
     $.ajax({
         url: app.url,
         method: `GET`,
@@ -29,46 +22,55 @@ app.getArt = () => {
         data: {
             key: app.key,
             format: `json`, 
-            q: app.searchTerm[0],
+            q: search,
             ps: 100
-            // // f.dating.period: `20`
-
             // showImage: false;
         }
     }).then((result) => {
-        app.shuffle(result.artObjects);        
-        console.log(result);
+        // console.log(result);
+        // randomizing results 
+        const randomArray = result.artObjects;      
+        app.shuffle(randomArray);  
+        const cutArray = randomArray.slice(1, 4);
+        app.shuffle(cutArray);  
+        console.log(cutArray);
+        for (let index in cutArray) {
+            const imageLink = cutArray[index].webImage;
+            const altText = cutArray[index].longTitle;
+            console.log(imageLink);
+            console.log(altText);
+            $(`.artWorks`).append(`<img src="${imageLink.url}" alt="${altText}"></img>`)
+        }
     });
 }
 
-
-app.userSelection = function() {
-
-    // for (key in app.searchTerm) {
-    //     if (key) {
-    //         console.log(app.searchTerm[key].this);
-    //     }           
-    // }
-
-    // //WORKING FALLBACK
-    const selection = `animals`;
-    $(`button[data-theme="${selection}"]`).on(`click`, () => {
-        app.getArt();       
+// user chooses an option => display paintings
+app.displayArt = () => {
+    $(`.option`).on(`click`, function() {
+        app.getArt($(this).text()); 
     })
+}
 
 
+// PASTING IMAGE IN
+app.imageSelection = function () {
+    $(`.imageContainer li`).on(`click`, function () {
+        // console this
+        $(this).append(`<img src="" alt="" srcset=""></img>`)
+    })
 }
 
 
 // once the select button is clicked => menu is displayed
-app.dropdownMenu = function() {
+app.dropdownMenu = () => {
     $(`.selectButton`).on(`click`, function() {
+        // console.log(this)
         $(`.selectButtonBox`).addClass(`smallerMargin`);
         $(`.option`).removeClass(`hidden`).addClass(`animated zoomIn`).one(`animationend`, function() {
-            $(this).removeClass(`animated fadeInUp`)
+            $(this).removeClass(`animated fadeInUp`) 
         });
         $(`.underline`).removeClass(`hidden`).addClass(`animated zoomIn`);
-        $(`.optionsBox`).addClass(`border slower animated fadeIn`)
+        $(`.optionsBox`).addClass(`border slower animated fadeIn`);
     });
 }
 
@@ -92,10 +94,10 @@ app.dropdownMenu = function() {
 
 // init FUNCTION Calls
 app.init = () => {
-    app.userSelection();
     // app.shuffle(app.sourceArray);  // JUST NEED TO supply array
     // app.nextFuction();
     app.dropdownMenu();
+    app.displayArt();
 }
 
 
@@ -139,19 +141,3 @@ $(() => {
     
 // Provide Link for User Gallery
 //     ( note Gallery is only active during session )
-
-
-
-// EXTRA CODE BITS
-// _______________________________________________
-// // SHUFFLING ARRAY randomly
-// // Fisher-Yates shuffle. 
-// app.shuffle = function shuffle(array) {
-//     for (let i = array.length - 1; i > 0; i--) {
-//         let j = Math.floor(Math.random() * (i + 1));
-//         [array[i], array[j]] = [array[j], array[i]];
-//     }
-//     // console.log(app.sourceArray, `...remove log`); 
-// }
-// -------------------------------------------------
-
