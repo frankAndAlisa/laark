@@ -52,7 +52,7 @@ app.userSelection = function() {
 app.imageSelection = function () {
     $(`.imageContainer li`).on(`click`, function () {
         // console this
-        $(results.artObjects[0]).append(`.pieceOne`);
+        $(this).append(results.artObjects[0]);
     })
 }
 
