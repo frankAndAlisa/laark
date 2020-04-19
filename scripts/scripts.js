@@ -1,4 +1,4 @@
-// // namespacing
+// namespacing
 const app = {};
 
 // ajax key
@@ -6,13 +6,36 @@ app.key = `fbeuXXM5`;
 // ajax URL
 app.url = `https://www.rijksmuseum.nl/api/en/collection`;
 
-app.searchTerm = [
-    themeOne = `animals`,
-    themeTwo = `people`,
-    themeThree = `nature`,
-    themeFour = `objects`
-];
+app.randomArray = []; 
+// ajax CALL to API
+// NOTE: temporarily set to return 10 images only
+app.callApi = (search) => {
+    $.ajax({
+        url: app.url,
+        method: `GET`,
+        dataType: `json`,
+        data: {
+            key: app.key,
+            format: `json`, 
+            q: search,
+            // ps: 100
+            p: 10 //temporary smaller api call for testing
+            // showImage: false;
+        }
+    }).then((result) => {
+        // randomizing results 
+        app.randomArray = result.artObjects;      
+        app.shuffle(app.randomArray);
+        // picking first 3 images
+        const cutArray = app.randomArray.slice(1, 4);
 
+        // const secondArray = randomArray.slice(5, 7);
+        // putting elements on the page
+        app.displayArtInitial(cutArray); 
+    });
+}
+
+// Shuffling function
 app.shuffle = function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -20,56 +43,74 @@ app.shuffle = function shuffle(array) {
     }
 }
 
-// ajax call
-app.getArt = () => {
-    $.ajax({
-        url: app.url,
-        method: `GET`,
-        dataType: `json`,
-        data: {
-            key: app.key,
-            format: `json`,
-            q: app.searchTerm[0],
-            ps: 100
-            // // f.dating.period: `20`
-
-            // showImage: false;
-        }
-    }).then((result) => {
-        app.shuffle(result.artObjects);
-        console.log(result);
-    });
-}
-
-
-app.userSelection = function () {
-
-    // for (key in app.searchTerm) {
-    //     if (key) {
-    //         console.log(app.searchTerm[key].this);
-    //     }           
-    // }
-
-    // //WORKING FALLBACK
-    const selection = `animals`;
-    $(`button[data-theme="${selection}"]`).on(`click`, () => {
-        app.getArt();
-    })
-
-
-}
-
-
-// once the select button is clicked => menu is displayed
-app.dropdownMenu = function () {
+// Display DROPDOWN
+app.dropdownMenu = () => {
     $(`.selectButton`).on(`click`, function () {
         $(`.selectButtonBox`).addClass(`smallerMargin`);
         $(`.option`).removeClass(`hidden`).addClass(`animated zoomIn`).one(`animationend`, function () {
             $(this).removeClass(`animated fadeInUp`)
         });
         $(`.underline`).removeClass(`hidden`).addClass(`animated zoomIn`);
-        $(`.optionsBox`).addClass(`border slower animated fadeIn`)
+        $(`.optionsBox`).addClass(`border slower animated fadeIn`);
+        console.log(`dropdown initiated`)
     });
+}
+
+// user selects a theme
+app.themeSelect= () => {
+    $(`.option`).on(`click`, function () {
+        app.callApi($(this).text());
+        $(`.selection`)
+            .toggleClass(`visuallyHidden`)
+            // .toggleClass(`hideOnSelect`);
+            // .addClass(`hideOnSelect`);
+        console.log(`theme selected, section.selection hidden, api called`);
+
+        // HIDE ME AFTER 1st SELECTION
+    })
+}
+
+// PASTING IMAGE IN
+app.displayArtInitial = (artpieces) => {
+    // looping through sliced array
+    artpieces.forEach((artWork) => {
+        const imageLink = artWork.webImage;
+        const altText = artWork.longTitle;
+        const insertImage = `<img src="${imageLink.url}" alt="${altText}">`;
+        // dynamically appending to the DOM
+        $(`.imageContainer`).append(`<li class="artWorks">${insertImage}</li>`);
+        // $(insertImage).appendTo(`.imageContainer li`);
+    })
+}
+
+app.firstSelect = () =>{
+    $(`ul`).on(`click`, `li`, function () {
+        console.log(this);
+        $(this).toggleClass(`selected`);
+        $(this).siblings().toggleClass(`notSelected`);
+        if ($('li').hasClass(`notSelected`)) {
+            $(`.notSelected`).remove();
+            console.log(this);
+            const secondArray = app.randomArray.slice(5, 7);
+            console.log(secondArray);
+            app.displayArtInitial(secondArray);
+            // const secondArray = randomArray.slice(5, 7);
+            // console.log(app.displayArtIniial); 
+        }
+            // .toggleClass(`selected`);
+
+        // if ($(this).hasClass(`selected`)) {
+        //     $(this);
+        // } else if ($(this).hasClass(`notSelected`)) {
+        //     console.log(`bye`)`
+        // }
+            
+            // $(`li`).siblings()
+            //     // .removeClass(`selected`)
+        console.log(`image select is working`);
+
+        // HIDE ME AFTER 1st SELECTION
+    })
 }
 
 // MENU LISTENER,
@@ -92,18 +133,20 @@ app.dropdownMenu = function () {
 
 // init FUNCTION Calls
 app.init = () => {
-    app.userSelection();
     // app.shuffle(app.sourceArray);  // JUST NEED TO supply array
     // app.nextFuction();
     app.dropdownMenu();
+    // app.imageSelection();
+    app.themeSelect();
+    app.firstSelect();
 }
 
 
 // DOCUMENT READY... with init FUNCTION CALL
 $(() => {
     app.init();
-
 })
+
 
 
 
@@ -141,7 +184,6 @@ $(() => {
 //     ( note Gallery is only active during session )
 
 
-
 // EXTRA CODE BITS
 // _______________________________________________
 // // SHUFFLING ARRAY randomly
@@ -153,4 +195,4 @@ $(() => {
 //     }
 //     // console.log(app.sourceArray, `...remove log`); 
 // }
-// -------------------------------------------------
+// -----------------------------------------------

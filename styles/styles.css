@@ -676,6 +676,14 @@ img {
      object-fit: cover;
 }
 
+.selected {
+  border: 5px solid red;
+}
+
+.notSelected {
+  border: 5px solid blue;
+}
+
 .infoOverlay {
   display: none;
 }
