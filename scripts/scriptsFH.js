@@ -6,12 +6,12 @@ app.key = `fbeuXXM5`;
 // ajax URL
 app.url = `https://www.rijksmuseum.nl/api/en/collection`;
 
-app.searchTerm = [ 
-    themeOne = `animals`,
-    themeTwo = `people`,
-    themeThree = `nature`,
-    themeFour = `objects`
-];
+// app.searchTerm = [ 
+//     themeOne = `animals`,
+//     themeTwo = `people`,
+//     themeThree = `nature`,
+//     themeFour = `objects`
+// ];
 
 app.shuffle = function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -21,7 +21,7 @@ app.shuffle = function shuffle(array) {
 }
 
 // ajax call
-app.getArt = () => {
+app.getArt = (search) => {
     $.ajax({
         url: app.url,
         method: `GET`,
@@ -29,7 +29,7 @@ app.getArt = () => {
         data: {
             key: app.key,
             format: `json`, 
-            q: app.searchTerm[0],
+            q: search,
             ps: 100
             // // f.dating.period: `20`
 
@@ -43,32 +43,22 @@ app.getArt = () => {
 
 
 app.userSelection = function() {
-
-    // for (key in app.searchTerm) {
-    //     if (key) {
-    //         console.log(app.searchTerm[key].this);
-    //     }           
-    // }
-
-    // //WORKING FALLBACK
-    const selection = `animals`;
-    $(`button[data-theme="${selection}"]`).on(`click`, () => {
-        app.getArt();       
+    $(`.optionsBox button`).on(`click`, function () {
+        app.getArt($(this).text());
     })
-
-
 }
 
 
 // once the select button is clicked => menu is displayed
-app.dropdownMenu = function() {
+app.dropdownMenu = () => {
     $(`.selectButton`).on(`click`, function() {
+        // console.log(this)
         $(`.selectButtonBox`).addClass(`smallerMargin`);
         $(`.option`).removeClass(`hidden`).addClass(`animated zoomIn`).one(`animationend`, function() {
-            $(this).removeClass(`animated fadeInUp`)
+            $(this).removeClass(`animated fadeInUp`) 
         });
         $(`.underline`).removeClass(`hidden`).addClass(`animated zoomIn`);
-        $(`.optionsBox`).addClass(`border slower animated fadeIn`)
+        $(`.optionsBox`).addClass(`border slower animated fadeIn`);
     });
 }
 
@@ -92,10 +82,10 @@ app.dropdownMenu = function() {
 
 // init FUNCTION Calls
 app.init = () => {
-    app.userSelection();
     // app.shuffle(app.sourceArray);  // JUST NEED TO supply array
     // app.nextFuction();
     app.dropdownMenu();
+    app.userSelection();
 }
 
 

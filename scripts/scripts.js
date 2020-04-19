@@ -6,7 +6,7 @@ app.key = `fbeuXXM5`;
 // ajax URL
 app.url = `https://www.rijksmuseum.nl/api/en/collection`;
 
-app.searchTerm = [ 
+app.searchTerm = [
     themeOne = `animals`,
     themeTwo = `people`,
     themeThree = `nature`,
@@ -28,7 +28,7 @@ app.getArt = () => {
         dataType: `json`,
         data: {
             key: app.key,
-            format: `json`, 
+            format: `json`,
             q: app.searchTerm[0],
             ps: 100
             // // f.dating.period: `20`
@@ -36,13 +36,13 @@ app.getArt = () => {
             // showImage: false;
         }
     }).then((result) => {
-        app.shuffle(result.artObjects);        
+        app.shuffle(result.artObjects);
         console.log(result);
     });
 }
 
 
-app.userSelection = function() {
+app.userSelection = function () {
 
     // for (key in app.searchTerm) {
     //     if (key) {
@@ -53,7 +53,7 @@ app.userSelection = function() {
     // //WORKING FALLBACK
     const selection = `animals`;
     $(`button[data-theme="${selection}"]`).on(`click`, () => {
-        app.getArt();       
+        app.getArt();
     })
 
 
@@ -61,10 +61,10 @@ app.userSelection = function() {
 
 
 // once the select button is clicked => menu is displayed
-app.dropdownMenu = function() {
-    $(`.selectButton`).on(`click`, function() {
+app.dropdownMenu = function () {
+    $(`.selectButton`).on(`click`, function () {
         $(`.selectButtonBox`).addClass(`smallerMargin`);
-        $(`.option`).removeClass(`hidden`).addClass(`animated zoomIn`).one(`animationend`, function() {
+        $(`.option`).removeClass(`hidden`).addClass(`animated zoomIn`).one(`animationend`, function () {
             $(this).removeClass(`animated fadeInUp`)
         });
         $(`.underline`).removeClass(`hidden`).addClass(`animated zoomIn`);
@@ -136,7 +136,7 @@ $(() => {
 //     … create BUTTON, to ADD images to GALLERY   
 //        … create BUTTON, to REVIEW images larger 
 //     … create interactions within the gallery and large image view
-    
+
 // Provide Link for User Gallery
 //     ( note Gallery is only active during session )
 
@@ -154,4 +154,3 @@ $(() => {
 //     // console.log(app.sourceArray, `...remove log`); 
 // }
 // -------------------------------------------------
-
