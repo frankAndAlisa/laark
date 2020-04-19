@@ -48,6 +48,14 @@ app.userSelection = function() {
     })
 }
 
+// PASTING IMAGE IN
+app.imageSelection = function () {
+    $(`.imageContainer li`).on(`click`, function () {
+        // console this
+        $(results.artObjects[0]).append(`.pieceOne`);
+    })
+}
+
 
 // once the select button is clicked => menu is displayed
 app.dropdownMenu = () => {
