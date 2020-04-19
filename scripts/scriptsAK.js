@@ -31,18 +31,26 @@ app.getArt = (search) => {
         // randomizing results 
         const randomArray = result.artObjects;      
         app.shuffle(randomArray);  
+        // randomizing sliced array 
         const cutArray = randomArray.slice(1, 4);
-        app.shuffle(cutArray);  
-        console.log(cutArray);
-        for (let index in cutArray) {
-            const imageLink = cutArray[index].webImage;
-            const altText = cutArray[index].longTitle;
-            console.log(imageLink);
-            console.log(altText);
-            $(`.artWorks`).append(`<img src="${imageLink.url}" alt="${altText}"></img>`)
-        }
+        app.shuffle(cutArray); 
+        // putting elements on the page
+        app.putElementOnPage(cutArray); 
     });
 }
+
+app.putElementOnPage = (artpieces) => {
+    // looping through sliced array
+    artpieces.forEach((artWork) => {
+        const imageLink = artWork.webImage;
+        const altText = artWork.longTitle;
+        const insertImage = `<img src="${imageLink.url}" alt="${altText}">`;
+        console.log(insertImage);
+        // dynamically appending to the DOM
+        $(`ul`).append(`<li class="artWork">${insertImage}</li>`);
+    })
+}
+
 
 // user chooses an option => display paintings
 app.displayArt = () => {
