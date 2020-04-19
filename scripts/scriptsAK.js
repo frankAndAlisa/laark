@@ -75,7 +75,6 @@ app.themeSelect= () => {
 }
 
 
-
 // PASTING IMAGE IN
 app.displayArt = function () {
     $(`.imageContainer li`).on(`click`, function () {
@@ -83,7 +82,6 @@ app.displayArt = function () {
         $(this).append(`<img src="" alt="" srcset=""></img>`)
     })
 }
-
 
 app.putElementOnPage = (artpieces) => {
     // looping through sliced array
@@ -93,7 +91,7 @@ app.putElementOnPage = (artpieces) => {
         const insertImage = `<img src="${imageLink.url}" alt="${altText}">`;
         // console.log(insertImage);
         // dynamically appending to the DOM
-        $(`ul`).append(`<li class="artWork">${insertImage}</li>`);
+        $(`ul`).append(`<li class="artWorks">${insertImage}</li>`);
     })
 }
 
@@ -133,7 +131,6 @@ app.init = () => {
 // DOCUMENT READY... with init FUNCTION CALL
 $(() => {
     app.init();
-
 })
 
 
