@@ -1,1 +1,10 @@
 // Click Events
+
+// .hideOnSelect {
+//     display: none;
+// }
+
+.visuallyHidden {
+    opacity: 0;    
+    transition: all 2sec ease-in;
+}

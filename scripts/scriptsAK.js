@@ -64,10 +64,16 @@ app.dropdownMenu = () => {
 app.themeSelect= () => {
     $(`.option`).on(`click`, function () {
         app.callApi($(this).text());
-        console.log(`theme selected`);
+        $(`.selection`)
+            .toggleClass(`visuallyHidden`)
+            // .toggleClass(`hideOnSelect`);
+            // .addClass(`hideOnSelect`);
+        console.log(`theme selected, section.selection hidden, api called`);
+
         // HIDE ME AFTER 1st SELECTION
     })
 }
+
 
 
 // PASTING IMAGE IN
@@ -90,6 +96,9 @@ app.putElementOnPage = (artpieces) => {
         $(`ul`).append(`<li class="artWork">${insertImage}</li>`);
     })
 }
+
+
+
 
 
 // MENU LISTENER,

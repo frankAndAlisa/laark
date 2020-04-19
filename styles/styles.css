@@ -324,6 +324,12 @@ p {
   font-size: 2rem;
 }
 
+.visuallyHidden {
+  opacity: 0;
+  -webkit-transition: all 2sec ease-in;
+  transition: all 2sec ease-in;
+}
+
 header {
   background-size: cover;
   background-repeat: no-repeat;
@@ -439,6 +445,8 @@ h1 span {
 .description {
   min-height: 100vh;
   background: linear-gradient(170deg, #15171A 30%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%);
+  -webkit-transition: all 1sec ease-in;
+  transition: all 1sec ease-in;
 }
 
 .description .descriptionHeading {
