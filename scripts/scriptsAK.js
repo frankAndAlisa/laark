@@ -1,4 +1,6 @@
-// hi Frank!// // namespacing
+// hi REORDERED & clarified naming
+
+// namespacing
 const app = {};
 
 // ajax key
@@ -6,15 +8,9 @@ app.key = `fbeuXXM5`;
 // ajax URL
 app.url = `https://www.rijksmuseum.nl/api/en/collection`;
 
-app.shuffle = function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-// ajax call
-app.getArt = (search) => {
+// ajax CALL to API
+// NOTE: temporarily set to return 10 images only
+app.callApi = (search) => {
     $.ajax({
         url: app.url,
         method: `GET`,
@@ -23,14 +19,16 @@ app.getArt = (search) => {
             key: app.key,
             format: `json`, 
             q: search,
-            ps: 100
+            // ps: 100
+            p: 10 //temporary smaller api call for testing
             // showImage: false;
         }
     }).then((result) => {
         // console.log(result);
         // randomizing results 
         const randomArray = result.artObjects;      
-        app.shuffle(randomArray);  
+        app.shuffle(randomArray);
+        console.log(randomArray); 
         // randomizing sliced array 
         const cutArray = randomArray.slice(1, 4);
         app.shuffle(cutArray); 
@@ -39,29 +37,41 @@ app.getArt = (search) => {
     });
 }
 
-app.putElementOnPage = (artpieces) => {
-    // looping through sliced array
-    artpieces.forEach((artWork) => {
-        const imageLink = artWork.webImage;
-        const altText = artWork.longTitle;
-        const insertImage = `<img src="${imageLink.url}" alt="${altText}">`;
-        console.log(insertImage);
-        // dynamically appending to the DOM
-        $(`ul`).append(`<li class="artWork">${insertImage}</li>`);
-    })
+// Shuffling function
+app.shuffle = function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// Display DROPDOWN
+app.dropdownMenu = () => {
+    $(`.selectButton`).on(`click`, function () {
+        // console.log(this)
+        $(`.selectButtonBox`).addClass(`smallerMargin`);
+        $(`.option`).removeClass(`hidden`).addClass(`animated zoomIn`).one(`animationend`, function () {
+            $(this).removeClass(`animated fadeInUp`)
+        });
+        $(`.underline`).removeClass(`hidden`).addClass(`animated zoomIn`);
+        $(`.optionsBox`).addClass(`border slower animated fadeIn`);
+        console.log(`dropdown initiated`)
+    });
 }
 
 
-// user chooses an option => display paintings
-app.displayArt = () => {
-    $(`.option`).on(`click`, function() {
-        app.getArt($(this).text()); 
+// 
+app.themeSelect= () => {
+    $(`.option`).on(`click`, function () {
+        app.callApi($(this).text());
+        console.log(`theme selected`);
+        // HIDE ME AFTER 1st SELECTION
     })
 }
 
 
 // PASTING IMAGE IN
-app.imageSelection = function () {
+app.displayArt = function () {
     $(`.imageContainer li`).on(`click`, function () {
         // console this
         $(this).append(`<img src="" alt="" srcset=""></img>`)
@@ -69,18 +79,18 @@ app.imageSelection = function () {
 }
 
 
-// once the select button is clicked => menu is displayed
-app.dropdownMenu = () => {
-    $(`.selectButton`).on(`click`, function() {
-        // console.log(this)
-        $(`.selectButtonBox`).addClass(`smallerMargin`);
-        $(`.option`).removeClass(`hidden`).addClass(`animated zoomIn`).one(`animationend`, function() {
-            $(this).removeClass(`animated fadeInUp`) 
-        });
-        $(`.underline`).removeClass(`hidden`).addClass(`animated zoomIn`);
-        $(`.optionsBox`).addClass(`border slower animated fadeIn`);
-    });
+app.putElementOnPage = (artpieces) => {
+    // looping through sliced array
+    artpieces.forEach((artWork) => {
+        const imageLink = artWork.webImage;
+        const altText = artWork.longTitle;
+        const insertImage = `<img src="${imageLink.url}" alt="${altText}">`;
+        // console.log(insertImage);
+        // dynamically appending to the DOM
+        $(`ul`).append(`<li class="artWork">${insertImage}</li>`);
+    })
 }
+
 
 // MENU LISTENER,
 //     USER selects from a drop down/ menu
@@ -106,6 +116,8 @@ app.init = () => {
     // app.nextFuction();
     app.dropdownMenu();
     app.displayArt();
+    // app.imageSelection();
+    app.themeSelect();
 }
 
 

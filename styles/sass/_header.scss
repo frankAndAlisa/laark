@@ -10,6 +10,11 @@ header {
     // Background image OLder Browser Prefixes and support
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#15171a",endColorstr="#ffffff",GradientType=1);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#15171a",endColorstr="#ffffff",GradientType=1), url(../assets/headerBackground5.jpg);
+
+    background-image: -o-linear-gradient(30deg, 
+                        rgba(21,23,26,0.80) 0%, rgba(21,23,26,0.60) 50%,
+                        rgba(255,255,255,0.60) 50%, rgba(255,255,255,0.90) 100%), 
+                        url(../assets/headerBackground5.jpg);
     background-image: -moz-linear-gradient(60deg, 
                         rgba(21,23,26,0.80) 0%, rgba(21,23,26,0.60) 50%,
                         rgba(255,255,255,0.60) 50%, rgba(255,255,255,0.90) 100%), 
@@ -81,6 +86,7 @@ h1{
     color: $darkColor;
     background-color: #6d6d6d64;
     border: 1px solid $darkColor;
+    -o-transition: all .5s cubic-bezier(.6,.01,.85,.75);
     transition: all .5s cubic-bezier(.6,.01,.85,.75);
     color: $darkColor;
     // margin: -.3rem;
