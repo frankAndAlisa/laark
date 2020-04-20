@@ -656,9 +656,9 @@ h1 span {
   -ms-grid-rows: (1fr)[12];
       grid-template-rows: repeat(12, 1fr);
   justify-items: left;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   z-index: 2;
   position: relative;
   height: 100vh;
@@ -670,10 +670,14 @@ h1 span {
   -ms-grid-column-span: 13;
   grid-column: 1/ 14;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
+  -ms-grid-row-span: 4;
+  grid-row: 1/ 5;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   font-size: 7rem;
   padding: 0;
+  padding-bottom: 10%;
   margin: 0;
 }
 
@@ -688,33 +692,31 @@ h1 span {
 .imageContainer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
-  -webkit-column-gap: 2vw;
-          column-gap: 2vw;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 8vw;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 8;
+  grid-row: 5 / 13;
   justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   z-index: 2;
   position: absolute;
-  height: 100%;
   width: 100%;
-  padding: 8vh 0 8vh 0;
+  padding: 0vh 0 8vh 0;
 }
 
 .artWorks {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2 / 3;
-  z-index: 10;
   background-color: #6B686C;
   position: relative;
-  min-width: 25vw;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   max-width: 300px;
-  height: 400px;
+  width: 100%;
+  height: 300px;
   list-style: none;
 }
 
