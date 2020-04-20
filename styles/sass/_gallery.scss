@@ -58,6 +58,20 @@
     list-style: none;
 }
 
+.mask {
+    display: block;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.artWorks .mask {
+    background-color: red;
+}
+
 img {
     height: 100%;
     width: 100%;
@@ -74,12 +88,8 @@ img {
     border: 5px solid blue;
 }
 
-.infoOverlay{
-    display: none;
-}
 
-
-// .galleryContainer li:hover .infoOverlay{
+// .galleryContainer li:hover {
 //     // height: 100%;
 //     // width: 100%;
 //     display: flex;
