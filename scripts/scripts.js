@@ -157,18 +157,24 @@ app.secondSelect = () => {
 //     DOM to display 3  returned images
 //     DOM to display message “ … choose one
 
-
-
+app.scrolling = () => {
+    $(`.scrollEffect`).on(`click`, function () {
+        console.log(`SMOOTHER SCROLLING to be added`);
+        
+    });
+}
 
 // init FUNCTION Calls
 app.init = () => {
     // app.shuffle(app.sourceArray);  // JUST NEED TO supply array
     // app.nextFuction();
+    app.scrolling();
     app.dropdownMenu();
     // app.imageSelection();
     app.themeSelect();
     app.firstSelect();
     app.secondSelect();
+
 }
 
 

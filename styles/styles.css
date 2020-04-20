@@ -247,6 +247,7 @@ template {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -297,6 +298,10 @@ p {
   margin: 0 auto;
   width: 1440px;
   max-width: 90%;
+}
+
+a {
+  text-decoration: none;
 }
 
 .hidden {
@@ -419,8 +424,8 @@ h1 span {
   color: #15171A;
   background-color: #6d6d6d64;
   border: 1px solid #15171A;
-  -webkit-transition: all 0.5s cubic-bezier(0.6, 0.01, 0.85, 0.75);
-  transition: all 0.5s cubic-bezier(0.6, 0.01, 0.85, 0.75);
+  -webkit-transition: all 0.4s cubic-bezier(0.6, 0.01, 0.85, 0.75);
+  transition: all 0.4s cubic-bezier(0.6, 0.01, 0.85, 0.75);
   color: #15171A;
 }
 
@@ -445,8 +450,6 @@ h1 span {
 .description {
   min-height: 100vh;
   background: linear-gradient(170deg, #15171A 30%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%);
-  -webkit-transition: all 1sec ease-in;
-  transition: all 1sec ease-in;
 }
 
 .description .descriptionHeading {
