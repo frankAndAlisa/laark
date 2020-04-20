@@ -2,8 +2,16 @@
 .galleryShapes{
     height: 100vh;
     width: 100%; 
-    background-color: $darkColor;
+    // background-color: $darkColor;
     
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#15171a",endColorstr="#a03b1c",GradientType=1); 
+    // background: rgb(21,23,26);
+    // background: -moz-linear-gradient(170deg, rgba(21,23,26,1) 0%, rgba(21,23,26,1) 40%, rgba(160,59,28,1) 40%, rgba(160,59,28,1) 100%);
+    // background: -webkit-linear-gradient(170deg, rgba(21,23,26,1) 0%, rgba(21,23,26,1) 40%, rgba(160,59,28,1) 40%, rgba(160,59,28,1) 100%);
+    background: linear-gradient(170deg,
+                 rgba(21,23,26,1) 0%, rgba(21,23,26,1) 70%,     
+                 rgba(160,59,28,1) 70%, rgba(160,59,28,1) 100%);
+
 }
 
 .galleryShapes{

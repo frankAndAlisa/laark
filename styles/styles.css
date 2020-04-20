@@ -634,7 +634,7 @@ h1 span {
 .galleryShapes {
   height: 100vh;
   width: 100%;
-  background-color: #15171A;
+  background: linear-gradient(170deg, #15171a 0%, #15171a 70%, #a03b1c 70%, #a03b1c 100%);
 }
 
 .galleryShapes {
