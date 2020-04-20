@@ -119,8 +119,10 @@ app.secondSelect = () => {
     $(`ul`).one(`click`, `.notSelected`, function () {
         console.log(this);
         $(this).toggleClass(`selected`);
+        $(this).toggleClass(`notSelected`);
         // $(this).siblings().toggleClass(`notSelected`);
-        if ($('li').hasClass(`notSelected`)) {
+        if ($(this).hasClass(`notSelected`)) {
+            // $(this).toggleClass(`notSelected`);
             // Clears other images
             $(`.notSelected`).remove();
             // console.log(this);

@@ -630,22 +630,12 @@ h1 span {
       align-self: center;
 }
 
-.gallery
+.gallery,
 .galleryShapes {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
+  background-color: #15171A;
   background: linear-gradient(170deg, #15171a 0%, #15171a 70%, #a03b1c 70%, #a03b1c 100%);
-}
-
-.galleryShapes {
-  z-index: 1;
-  position: absolute;
-}
-
-.galleryShapes.bottomShape {
-  background-color: #A03B1C;
-  -webkit-clip-path: polygon(0 75%, 100% 50%, 100% 100%, 0 100%);
-  clip-path: polygon(0 75%, 100% 50%, 100% 100%, 0 100%);
 }
 
 .galleryContainer {
@@ -655,13 +645,11 @@ h1 span {
       grid-template-columns: repeat(12, 1fr);
   -ms-grid-rows: (1fr)[12];
       grid-template-rows: repeat(12, 1fr);
-  justify-items: left;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  z-index: 2;
-  position: relative;
-  height: 100vh;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
   padding: 8vh 0 8vh 0;
 }
 
@@ -675,9 +663,11 @@ h1 span {
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
+  -ms-grid-column-align: left;
+      justify-self: left;
   font-size: 7rem;
   padding: 0;
-  padding-bottom: 10%;
+  padding-bottom: 8%;
   margin: 0;
 }
 
@@ -695,25 +685,27 @@ h1 span {
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 8vw;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 13;
+  grid-column: 1/ 14;
   -ms-grid-row: 5;
-  -ms-grid-row-span: 8;
-  grid-row: 5 / 13;
+  -ms-grid-row-span: 3;
+  grid-row: 5/ 8;
   justify-items: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  z-index: 2;
-  position: absolute;
   width: 100%;
-  padding: 0vh 0 8vh 0;
+  height: 100%;
+  padding: 0;
 }
 
 .artWorks {
   background-color: #6B686C;
   position: relative;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   max-width: 300px;
   width: 100%;
   height: 300px;
@@ -723,8 +715,6 @@ h1 span {
 img {
   height: 100%;
   width: 100%;
-  display: block;
-  margin: 0 auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -739,21 +729,6 @@ img {
 
 .infoOverlay {
   display: none;
-}
-
-.galleryContainer li:hover .infoOverlay {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  z-index: 20;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  color: #15171A;
-  background-color: #15171A;
-  opacity: 100%;
 }
 
 @media (max-width: 320px) {
