@@ -125,6 +125,7 @@ app.secondSelect = () => {
             // $(this).toggleClass(`notSelected`);
             // Clears other images
             $(`.notSelected`).remove();
+            console.log(`hello`);
             // console.log(this);
             // using global variable grabs next images in the array
             const thirdArray = app.randomArray.slice(8, 9);
