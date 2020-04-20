@@ -712,6 +712,20 @@ h1 span {
   list-style: none;
 }
 
+.mask {
+  display: block;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.artWorks .mask {
+  background-color: red;
+}
+
 img {
   height: 100%;
   width: 100%;
@@ -725,10 +739,6 @@ img {
 
 .notSelected {
   border: 5px solid blue;
-}
-
-.infoOverlay {
-  display: none;
 }
 
 @media (max-width: 320px) {
