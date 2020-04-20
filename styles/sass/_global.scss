@@ -1,6 +1,9 @@
 // Global Styles
 html {
     font-size: 62.5%;
+    // added lines 5-8, smoother CSS scrolling
+    scroll-behavior: smooth;
+    // transition: all 1s ease;
 }
 
 body {
@@ -53,6 +56,10 @@ p {
     margin: 0 auto;
     width: 1440px;
     max-width: 90%;
+}
+
+a {
+    text-decoration: none;
 }
 
 .hidden {

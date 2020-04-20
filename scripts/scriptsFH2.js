@@ -1,4 +1,4 @@
-// namespacing
+// FH2 Scripts  // namespacing
 const app = {};
 
 // ajax key
@@ -7,7 +7,7 @@ app.key = `fbeuXXM5`;
 app.url = `https://www.rijksmuseum.nl/api/en/collection`;
 
 
-app.randomArray = []; 
+app.randomArray = [];
 
 app.imageKey = {};
 
@@ -20,7 +20,7 @@ app.callApi = (search) => {
         dataType: `json`,
         data: {
             key: app.key,
-            format: `json`, 
+            format: `json`,
             q: search,
             ps: 100
             // p: 10 //temporary smaller api call for testing
@@ -28,14 +28,14 @@ app.callApi = (search) => {
         }
     }).then((result) => {
         // randomizing results 
-        app.randomArray = result.artObjects;      
+        app.randomArray = result.artObjects;
         app.shuffle(app.randomArray);
         // picking first 3 images
         cutArray = app.randomArray.slice(1, 4);
 
         // const secondArray = randomArray.slice(5, 7);
         // putting elements on the page
-        app.displayArtInitial(cutArray); 
+        app.displayArtInitial(cutArray);
     });
 }
 
@@ -61,13 +61,13 @@ app.dropdownMenu = () => {
 }
 
 // user selects a theme
-app.themeSelect= () => {
+app.themeSelect = () => {
     $(`.option`).on(`click`, function () {
         app.callApi($(this).text());
         $(`.selection`)
             .toggleClass(`visuallyHidden`)
-            // .toggleClass(`hideOnSelect`);
-            // .addClass(`hideOnSelect`);
+        // .toggleClass(`hideOnSelect`);
+        // .addClass(`hideOnSelect`);
         console.log(`theme selected, section.selection hidden, api called`);
 
         // HIDE ME AFTER 1st SELECTION
@@ -77,7 +77,7 @@ app.themeSelect= () => {
 // PASTING IMAGE IN
 app.displayArtInitial = (artpieces) => {
     // looping through sliced array;
-        // console.log(artpieces[0].id);
+    // console.log(artpieces[0].id);
     artpieces.forEach((artWork) => {
         const imageLink = artWork.webImage;
         const altText = artWork.longTitle;
@@ -90,7 +90,7 @@ app.displayArtInitial = (artpieces) => {
 }
 
 // SELECTS First image
-app.firstSelect = () =>{
+app.firstSelect = () => {
     $(`ul`).one(`click`, `li`, function () {
         console.log(this);
         // console.log(app.imageKey);
@@ -121,25 +121,25 @@ app.secondSelect = () => {
         $(this).toggleClass(`selected`);
         // $(this).siblings().toggleClass(`notSelected`);
         if ($('li').hasClass(`notSelected`)) {
-        // Clears other images
+            // Clears other images
             $(`.notSelected`).remove();
             // console.log(this);
-        // using global variable grabs next images in the array
+            // using global variable grabs next images in the array
             const thirdArray = app.randomArray.slice(8, 9);
-        // console.log(secondArray);
+            // console.log(secondArray);
             // displays the images
-        app.displayArtInitial(thirdArray);
-        $(this).siblings().toggleClass(`notSelected`);
+            app.displayArtInitial(thirdArray);
+            $(this).siblings().toggleClass(`notSelected`);
         }
         console.log(`image select is working again`);
         // console.log(app.imageKey);
     });
-    
+
     // if the key of the second item chosen  is = the first item key,
-        // do nothing...
+    // do nothing...
     // if the key is new then, select this item
-        // clear the other item
-        // replace the third image
+    // clear the other item
+    // replace the third image
 }
 
 // MENU LISTENER,
@@ -157,16 +157,24 @@ app.secondSelect = () => {
 //     DOM to display 3  returned images
 //     DOM to display message “ … choose one
 
+app.scrolling = () => {
+    $(`.scrollEffect`).on(`click`, function () {
+        console.log(`SMOOTHER SCROLLING to be added`);
+
+    });
+}
 
 // init FUNCTION Calls
 app.init = () => {
     // app.shuffle(app.sourceArray);  // JUST NEED TO supply array
     // app.nextFuction();
+    app.scrolling();
     app.dropdownMenu();
     // app.imageSelection();
     app.themeSelect();
     app.firstSelect();
     app.secondSelect();
+
 }
 
 

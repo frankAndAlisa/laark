@@ -247,6 +247,7 @@ template {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -297,6 +298,10 @@ p {
   margin: 0 auto;
   width: 1440px;
   max-width: 90%;
+}
+
+a {
+  text-decoration: none;
 }
 
 .hidden {
@@ -419,8 +424,8 @@ h1 span {
   color: #15171A;
   background-color: #6d6d6d64;
   border: 1px solid #15171A;
-  -webkit-transition: all 0.5s cubic-bezier(0.6, 0.01, 0.85, 0.75);
-  transition: all 0.5s cubic-bezier(0.6, 0.01, 0.85, 0.75);
+  -webkit-transition: all 0.4s cubic-bezier(0.6, 0.01, 0.85, 0.75);
+  transition: all 0.4s cubic-bezier(0.6, 0.01, 0.85, 0.75);
   color: #15171A;
 }
 
@@ -443,18 +448,26 @@ h1 span {
 }
 
 .description {
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(170deg, #15171A 30%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%);
-  -webkit-transition: all 1sec ease-in;
-  transition: all 1sec ease-in;
 }
 
 .description .descriptionHeading {
-  padding-top: 15vh;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 13;
+  grid-column: 1 / 14;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1 / 4;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .description .descriptionHeading h2 {
   color: #AEAEB3;
+  margin: 0;
+  padding-top: 4%;
 }
 
 .description .descriptionHeading h2 .highlight {
@@ -462,11 +475,21 @@ h1 span {
 }
 
 .description .descriptionContent {
-  padding: 15vh 25vh;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 10;
+  grid-column: 2 / 12;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 8;
+  grid-row: 5/ 13;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-bottom: 5%;
+  padding-left: 2%;
 }
 
 .description .descriptionContent .bigger {
-  font-size: 5rem;
+  font-size: 5.5rem;
   font-weight: 700;
 }
 
@@ -481,12 +504,40 @@ h1 span {
 }
 
 .description .descriptionContent .descriptionCredit {
-  margin-top: 60px;
+  padding-top: 3%;
 }
 
 .description .descriptionContent .descriptionCredit p {
   font-size: 1.8rem;
   margin: 0;
+}
+
+.startButton {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 13;
+  grid-column: 1 / 14;
+  -ms-grid-row: 13;
+  -ms-grid-row-span: 1;
+  grid-row: 13 / 14;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.descriptionText {
+  height: 100vh;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -ms-grid-rows: (1fr)[12];
+      grid-template-rows: repeat(12, 1fr);
+  justify-items: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5% 0;
 }
 
 .selection {
@@ -605,9 +656,9 @@ h1 span {
   -ms-grid-rows: (1fr)[12];
       grid-template-rows: repeat(12, 1fr);
   justify-items: left;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   z-index: 2;
   position: relative;
   height: 100vh;
@@ -619,10 +670,14 @@ h1 span {
   -ms-grid-column-span: 13;
   grid-column: 1/ 14;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
+  -ms-grid-row-span: 4;
+  grid-row: 1/ 5;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   font-size: 7rem;
   padding: 0;
+  padding-bottom: 10%;
   margin: 0;
 }
 
@@ -637,33 +692,31 @@ h1 span {
 .imageContainer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
-  -webkit-column-gap: 2vw;
-          column-gap: 2vw;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 8vw;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 8;
+  grid-row: 5 / 13;
   justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   z-index: 2;
   position: absolute;
-  height: 100%;
   width: 100%;
-  padding: 8vh 0 8vh 0;
+  padding: 0vh 0 8vh 0;
 }
 
 .artWorks {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2 / 3;
-  z-index: 10;
   background-color: #6B686C;
   position: relative;
-  min-width: 25vw;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   max-width: 300px;
-  height: 400px;
+  width: 100%;
+  height: 300px;
   list-style: none;
 }
 
