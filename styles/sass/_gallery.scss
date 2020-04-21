@@ -51,11 +51,10 @@
 }
 
 .artWorks {
-    background-color: $secondaryDarkGrey;
+    background-color: $darkColor;
     justify-self: center;
     align-self: center;      // FH was center
     // max-width: 300px;    // FH commented out, allows img to be wider
-
     position: relative;
     max-width: 300px;
     width: 100%;
@@ -67,7 +66,7 @@
     img {
         height: 100%;
         width: 100%;
-        // display: block;
+        display: block;
         // margin: 0 auto;
         object-fit: cover;
         transition: 0.4s all ease;
@@ -102,7 +101,9 @@
         padding-top: 15px;
         .linkToArt {
             display: inline-block;
+            text-transform: uppercase;
             font-size: 1.8rem;
+            // font-weight: 700;
             line-height: 25px;
             color: $primaryLightGrey;
             text-align: center;
@@ -149,9 +150,6 @@
         font-size: 1.7rem;
     }
 }
-
-
-
 
 .selected {
     border: 5px solid $accentColor;
