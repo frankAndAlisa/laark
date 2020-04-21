@@ -355,8 +355,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 2;
-  position: relative;
   height: 100vh;
   padding: 15vh 0 7vh 0;
 }
@@ -448,7 +446,7 @@ h1 span {
 }
 
 .description {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(170deg, #15171A 30%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%, #AEAEB3 17.5%);
 }
 
@@ -486,6 +484,9 @@ h1 span {
       align-self: center;
   padding-bottom: 5%;
   padding-left: 2%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 88%;
 }
 
 .description .descriptionContent .bigger {
@@ -537,7 +538,7 @@ h1 span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5% 0;
+  padding: 7vh 0;
 }
 
 .selection {
