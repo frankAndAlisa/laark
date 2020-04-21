@@ -1,4 +1,3 @@
-// namespacing
 const app = {};
 
 // ajax key
@@ -6,13 +5,10 @@ app.key = `fbeuXXM5`;
 // ajax URL
 app.url = `https://www.rijksmuseum.nl/api/en/collection`;
 
-
-app.randomArray = []; 
-
+app.randomArray = [];
 app.imageKey = {};
 
-// ajax CALL to API
-// NOTE: temporarily set to return 10 images only
+// ajax call
 app.callApi = (search) => {
     $.ajax({
         url: app.url,
@@ -20,26 +16,22 @@ app.callApi = (search) => {
         dataType: `json`,
         data: {
             key: app.key,
-            format: `json`, 
+            format: `json`,
             q: search,
             ps: 100
-            // p: 10 //temporary smaller api call for testing
-            // showImage: false;
         }
     }).then((result) => {
         // randomizing results 
-        app.randomArray = result.artObjects;      
+        app.randomArray = result.artObjects;
         app.shuffle(app.randomArray);
         // picking first 3 images
         cutArray = app.randomArray.slice(1, 4);
-
-        // const secondArray = randomArray.slice(5, 7);
         // putting elements on the page
-        app.displayArtInitial(cutArray); 
+        app.displayArtInitial(cutArray);
     });
 }
 
-// Shuffling function
+// shuffling function
 app.shuffle = function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -47,7 +39,7 @@ app.shuffle = function shuffle(array) {
     }
 }
 
-// Display DROPDOWN
+// dropdown menu
 app.dropdownMenu = () => {
     $(`.selectButton`).on(`click`, function () {
         $(`.selectButtonBox`).addClass(`smallerMargin`);
@@ -61,15 +53,12 @@ app.dropdownMenu = () => {
 }
 
 // user selects a theme
-app.themeSelect= () => {
+app.themeSelect = () => {
     $(`.option`).on(`click`, function () {
         app.callApi($(this).text());
         $(`.selection`)
             .toggleClass(`visuallyHidden`)
-            // .toggleClass(`hideOnSelect`);
-            // .addClass(`hideOnSelect`);
         console.log(`theme selected, section.selection hidden, api called`);
-
         // HIDE ME AFTER 1st SELECTION
     })
 }
@@ -77,70 +66,115 @@ app.themeSelect= () => {
 // PASTING IMAGE IN
 app.displayArtInitial = (artpieces) => {
     // looping through sliced array;
-        // console.log(artpieces[0].id);
     artpieces.forEach((artWork) => {
         const imageLink = artWork.webImage;
         const altText = artWork.longTitle;
+        const viewInMuseum = artWork.links.web; 
         app.imageKey = artWork.id;
         const insertImage = `<img src="${imageLink.url}" alt="${altText}">`;
+        // adding the hover effect
+        const descriptionOfArt = `
+            <div class="mask"></div> 
+            <p class="descriptionOfArt">${altText}</p>`
+        // adding the link to view the art piece on the website 
+        const linkToArt = `
+            <div class="linkToArtContainer">
+                <a class="linkToArt" href="${viewInMuseum}">Look at the painting on the official website</a>
+            <div>`
         // dynamically appending to the DOM
-        $(`.imageContainer`).append(`<li class="artWorks" data-imageref="${app.imageKey}">${insertImage}</li>`);
-        // $(insertImage).appendTo(`.imageContainer li`);
+        $(`.imageContainer`).append(`
+            <li class="artWorks" data-imageref="${app.imageKey}">
+                ${insertImage}
+                ${descriptionOfArt}
+                ${linkToArt}
+            </li>`
+        );
     })
 }
 
+
 // SELECTS First image
-app.firstSelect = () =>{
+app.firstSelect = () => {
     $(`ul`).one(`click`, `li`, function () {
-        console.log(this);
-        // console.log(app.imageKey);
         $(this).toggleClass(`selected`);
         $(this).siblings().toggleClass(`notSelected`);
-
+        $(`.galleryContainer h3`).html(`Good choice, pick one more!`);
+        app.displayUserOptions();
         // SELECTS OTHER IMAGES
         if ($('li').hasClass(`notSelected`)) {
             // Clears other images
             $(`.notSelected`).remove();
-            // console.log(this);
             // using global variable grabs next images in the array
             const secondArray = app.randomArray.slice(5, 7);
-            // console.log(secondArray);
             // displays the images
             app.displayArtInitial(secondArray);
             $(this).siblings().toggleClass(`notSelected`);
         }
-        console.log(`image select is working`);
-
-        // HIDE ME AFTER 1st SELECTION
     });
 }
 
+// selection second image image
 app.secondSelect = () => {
     $(`ul`).one(`click`, `.notSelected`, function () {
-        console.log(this);
         $(this).toggleClass(`selected`);
-        // $(this).siblings().toggleClass(`notSelected`);
-        if ($('li').hasClass(`notSelected`)) {
-        // Clears other images
-            $(`.notSelected`).remove();
-            // console.log(this);
-        // using global variable grabs next images in the array
-            const thirdArray = app.randomArray.slice(8, 9);
-        // console.log(secondArray);
-            // displays the images
+        $(this).toggleClass(`notSelected`);
+        $(`.galleryContainer h3`).html(`Great, images are selected!`);
+        // replacing the third image with a different one 
+        const thirdArray = app.randomArray.slice(8, 9);
         app.displayArtInitial(thirdArray);
-        $(this).siblings().toggleClass(`notSelected`);
-        }
-        console.log(`image select is working again`);
-        // console.log(app.imageKey);
+        $(`.notSelected`).remove();
+        $(`li`).addClass(`selected`);
+        // app.userSelectWarning(this);
+        app.displayUserOptions();
     });
-    
-    // if the key of the second item chosen  is = the first item key,
-        // do nothing...
-    // if the key is new then, select this item
-        // clear the other item
-        // replace the third image
 }
+
+// error handling
+app.errorHandling = () => {
+    $(`ul`).on(`click`, `li`, () => {
+        $('li').hasClass(`selected`) ?
+            console.log('PICK ANOTHER, already selected') : console.log(`not selected`);
+    });
+}
+
+// display user options
+app.displayUserOptions = () => {
+    console.log(`working`);
+    $(`.userOptions`).append(`
+        <p>Add to Personal Gallery</p>
+        <p>View image larger</p>
+    `);
+    // OFFER user options,
+    // revise the DOM
+    // … allow OVERLAY, on IMAGES, once initial three searches are completed
+    // … create BUTTON, to KEEP any of the select IMAGES
+    // … create BUTTON for NEW SEARCH / REVISE SEARCH
+}
+
+// smooth scrolling
+app.scrolling = () => {
+    $(`.scrollEffect`).on(`click`, function () {
+        console.log(`SMOOTHER SCROLLING to be added`);
+    });
+}
+
+// init FUNCTION Calls
+app.init = () => {
+    app.scrolling();
+    app.dropdownMenu();
+    app.themeSelect();
+    app.displayUserOptions();
+    app.firstSelect();
+    app.secondSelect();
+    app.errorHandling();
+}
+
+// DOCUMENT READY... with init FUNCTION CALL
+$(() => {
+    app.init();
+})
+
+
 
 // MENU LISTENER,
 //     USER selects from a drop down/ menu
@@ -156,27 +190,6 @@ app.secondSelect = () => {
 //     ...CREATE rule for 1st three searches
 //     DOM to display 3  returned images
 //     DOM to display message “ … choose one
-
-
-// init FUNCTION Calls
-app.init = () => {
-    // app.shuffle(app.sourceArray);  // JUST NEED TO supply array
-    // app.nextFuction();
-    app.dropdownMenu();
-    // app.imageSelection();
-    app.themeSelect();
-    app.firstSelect();
-    app.secondSelect();
-}
-
-
-// DOCUMENT READY... with init FUNCTION CALL
-$(() => {
-    app.init();
-})
-
-
-
 
 // LISTENER ON IMAGES
 //     USER Must select one
