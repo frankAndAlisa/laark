@@ -721,12 +721,12 @@ h1 span {
   height: 300px;
   list-style: none;
   margin: 20px 0px;
-  border: 5px solid transparent;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
 
 .artWorks img {
+  border: 5px solid transparent;
   height: 100%;
   width: 100%;
   display: block;
@@ -812,6 +812,7 @@ h1 span {
 }
 
 .artWorks:active img {
+  border: 5px solid #A03B1C;
   -webkit-filter: blur(0px);
           filter: blur(0px);
   -webkit-transform: scale(1.07);
