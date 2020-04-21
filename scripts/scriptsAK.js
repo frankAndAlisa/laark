@@ -19,8 +19,6 @@ app.callApi = (search) => {
             format: `json`,
             q: search,
             ps: 100
-            // p: 10 //temporary smaller api call for testing
-            // showImage: false;
         }
     }).then((result) => {
         // randomizing results 
@@ -28,7 +26,6 @@ app.callApi = (search) => {
         app.shuffle(app.randomArray);
         // picking first 3 images
         cutArray = app.randomArray.slice(1, 4);
-        // const secondArray = randomArray.slice(5, 7);
         // putting elements on the page
         app.displayArtInitial(cutArray);
     });
@@ -90,39 +87,35 @@ app.displayArtInitial = (artpieces) => {
                 ${insertImage}
                 ${descriptionOfArt}
                 ${linkToArt}
-            </li>
-        `);
-        // $(insertImage).appendTo(`.imageContainer li`);
+            </li>`
+        );
     })
 }
 
-app.userSelectWarning = () => {
-    const userWarning = `
-        <div class="userWarningContainer">
-            <p class="userWarning">Good choice!</p>
-        </div>`
-    if ($(`li`).hasClass(`selected`)) {
-        $(userWarning).appendTo(`.selected`).hide().fadeIn(1000);
-    }
-}
+// user select warning
+// app.userSelectWarning = (selectedItem) => {
+//     const userWarning = `
+//         <div class="userWarningContainer">
+//             <p class="userWarning">Good choice!</p>
+//         </div>`
+//     $(userWarning).appendTo(selectedItem).hide().fadeIn(1000);
+// }
 
 // SELECTS First image
 app.firstSelect = () => {
     $(`ul`).one(`click`, `li`, function () {
-        console.log(this);
-        // console.log(app.imageKey);
         $(this).toggleClass(`selected`);
         $(this).siblings().toggleClass(`notSelected`);
+        $(`.galleryContainer h3`).html(`Good choice, pick one more!`);
+        // $(`<h3>Pick one more!</h3>`).appendTo(`.galleryContainer`)
         // warn the user that they chose an image
-        app.userSelectWarning();
+        // app.userSelectWarning(this);
         // SELECTS OTHER IMAGES
         if ($('li').hasClass(`notSelected`)) {
             // Clears other images
             $(`.notSelected`).remove();
-            // console.log(this);
             // using global variable grabs next images in the array
             const secondArray = app.randomArray.slice(5, 7);
-            // console.log(secondArray);
             // displays the images
             app.displayArtInitial(secondArray);
             $(this).siblings().toggleClass(`notSelected`);
@@ -133,19 +126,20 @@ app.firstSelect = () => {
 // selection second image image
 app.secondSelect = () => {
     $(`ul`).one(`click`, `.notSelected`, function () {
-        // console.log(this);
         $(this).toggleClass(`selected`);
         $(this).toggleClass(`notSelected`);
+        $(`.galleryContainer h3`).html(`You are set!<span>Add to gallery</span>`);
         // replacing the third image with a different one 
         const thirdArray = app.randomArray.slice(8, 9);
         app.displayArtInitial(thirdArray);
         $(`.notSelected`).remove();
-        console.log(`image select is working again`);
-        app.userSelectWarning();
+        $(`li`).addClass(`selected`);
+        // app.userSelectWarning(this);
         app.displayUserOptions();
     });
 }
 
+// error handling
 app.errorHandling = () => {
     $(`ul`).on(`click`, `li`, () => {
         $('li').hasClass(`selected`) ?
@@ -153,6 +147,7 @@ app.errorHandling = () => {
     });
 }
 
+// display user options
 app.displayUserOptions = () => {
     console.log(`working`)
     // OFFER user options,
@@ -162,6 +157,7 @@ app.displayUserOptions = () => {
     // … create BUTTON for NEW SEARCH / REVISE SEARCH
 }
 
+// smooth scrolling
 app.scrolling = () => {
     $(`.scrollEffect`).on(`click`, function () {
         console.log(`SMOOTHER SCROLLING to be added`);
@@ -173,12 +169,12 @@ app.init = () => {
     app.scrolling();
     app.dropdownMenu();
     app.themeSelect();
-    app.userSelectWarning();
+    // app.userSelectWarning();
     app.firstSelect();
     app.secondSelect();
     app.errorHandling();
+    app.displayUserOptions();
 }
-
 
 // DOCUMENT READY... with init FUNCTION CALL
 $(() => {
