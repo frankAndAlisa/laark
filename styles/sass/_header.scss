@@ -36,9 +36,6 @@ header {
     grid-template-rows: repeat(12, 1fr);
     justify-items: right;
     align-items:center;
-    // z-index: 2;              //FH commented out
-    // position:relative;       //FH commented out
-    // width: 100%;
     height: 100vh;
     padding: 15vh 0 7vh 0;
 }
@@ -87,8 +84,6 @@ h1{
     -o-transition: all .4s cubic-bezier(.6,.01,.85,.75);
     transition: all .4s cubic-bezier(.6,.01,.85,.75);
     color: $darkColor;
-    // margin: -.3rem;
-    // padding: 0.1rem .8rem 0rem .8rem;
         h4{
             color: $darkColor;
             margin: -.3rem;
