@@ -6,7 +6,6 @@ app.key = `fbeuXXM5`;
 app.url = `https://www.rijksmuseum.nl/api/en/collection`;
 
 app.randomArray = [];
-app.imageKey = {};
 
 // ajax call
 app.callApi = (search) => {
@@ -58,8 +57,6 @@ app.themeSelect = () => {
         app.callApi($(this).text());
         $(`.selection`)
             .toggleClass(`visuallyHidden`)
-        console.log(`theme selected, section.selection hidden, api called`);
-        // HIDE ME AFTER 1st SELECTION
     })
 }
 
@@ -67,31 +64,23 @@ app.themeSelect = () => {
 app.displayArtInitial = (artpieces) => {
     // looping through sliced array;
     artpieces.forEach((artWork) => {
-        const imageLink = artWork.webImage;
+        const imageLink = artWork.webImage.url;
         const altText = artWork.longTitle;
-        const viewInMuseum = artWork.links.web; 
-        app.imageKey = artWork.id;
-        const insertImage = `<img src="${imageLink.url}" alt="${altText}">`;
+        const insertImage = `<img src="${imageLink}" alt="${altText}">`;
         // adding the hover effect
         const descriptionOfArt = `
             <div class="mask"></div> 
             <p class="descriptionOfArt">${altText}</p>`
-        // adding the link to view the art piece on the website 
-        const linkToArt = `
-            <div class="linkToArtContainer">
-                <a class="linkToArt" href="${viewInMuseum}">Look at the painting on the official website</a>
-            <div>`
         // dynamically appending to the DOM
         $(`.imageContainer`).append(`
-            <li class="artWorks" data-imageref="${app.imageKey}">
+            <li class="artWorks">
                 ${insertImage}
                 ${descriptionOfArt}
-                ${linkToArt}
+                <div class="displayUserOptions"></div>
             </li>`
         );
     })
 }
-
 
 // SELECTS First image
 app.firstSelect = () => {
@@ -99,7 +88,7 @@ app.firstSelect = () => {
         $(this).toggleClass(`selected`);
         $(this).siblings().toggleClass(`notSelected`);
         $(`.galleryContainer h3`).html(`Good choice, pick one more!`);
-        app.displayUserOptions();
+        // app.displayUserOptions();
         // SELECTS OTHER IMAGES
         if ($('li').hasClass(`notSelected`)) {
             // Clears other images
@@ -121,11 +110,17 @@ app.secondSelect = () => {
         $(`.galleryContainer h3`).html(`Great, images are selected!`);
         // replacing the third image with a different one 
         const thirdArray = app.randomArray.slice(8, 9);
+        const imgLink = $(`img`).attr(`src`);
         app.displayArtInitial(thirdArray);
         $(`.notSelected`).remove();
         $(`li`).addClass(`selected`);
-        // app.userSelectWarning(this);
-        app.displayUserOptions();
+        // const highRes = $(`.selected img`).attr(`src`);
+        if ($(`ul`).children().hasClass(`selected`)) {
+            $(`.displayUserOptions`).append(`
+                <a target="_blank" class="addGall" href="#"><i class="fas fa-plus-square"></i>Add to Gallery</a>
+                <a target="_blank" class="highRes" href="${imgLink}"><i class="fas fa-search-plus"></i>View Image in HR</a>
+            `).addClass(`animated fadeInUp`)
+            }
     });
 }
 
@@ -135,20 +130,6 @@ app.errorHandling = () => {
         $('li').hasClass(`selected`) ?
             console.log('PICK ANOTHER, already selected') : console.log(`not selected`);
     });
-}
-
-// display user options
-app.displayUserOptions = () => {
-    console.log(`working`);
-    $(`.userOptions`).append(`
-        <p>Add to Personal Gallery</p>
-        <p>View image larger</p>
-    `);
-    // OFFER user options,
-    // revise the DOM
-    // … allow OVERLAY, on IMAGES, once initial three searches are completed
-    // … create BUTTON, to KEEP any of the select IMAGES
-    // … create BUTTON for NEW SEARCH / REVISE SEARCH
 }
 
 // smooth scrolling
@@ -163,7 +144,6 @@ app.init = () => {
     app.scrolling();
     app.dropdownMenu();
     app.themeSelect();
-    app.displayUserOptions();
     app.firstSelect();
     app.secondSelect();
     app.errorHandling();
