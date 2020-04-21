@@ -1,5 +1,54 @@
 //Media Queries
 
+// FH Added ****************************
+@media (max-width: 1024px) {
+    // Global
+    h1{
+        font-size: 19rem;
+    }
+    h2{
+        font-size: 5.5rem;
+    }
+    
+    // Enter & Start Button
+    h4 {
+        font-size: 2.8rem;
+    }
+
+    // Description Section
+    .description .descriptionContent .bigger {
+        font-size: 4.8rem;
+    }
+    p{
+        font-size: 2rem;
+        line-height: 30px;
+        margin: 15px 0;
+    }
+    .description .descriptionContent .descriptionCredit p {
+        font-size: 1.6rem;
+    }
+
+    // DropDown
+    .selectButton {
+        font-size: 4rem;
+        letter-spacing: 0.3rem;
+    }
+    .option {
+        font-size: 5rem;
+    }
+    .option:hover {
+        font-size: 5.8rem;
+    }
+
+    // Gallery Section
+    .galleryContainer h3 {
+        font-size: 5.8rem;
+        justify-self: center;
+    }
+}
+// *************************************
+
+
 @media (max-width: 320px) {
     h1 {
         font-size: 10.5rem;
