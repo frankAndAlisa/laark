@@ -114,10 +114,6 @@ app.firstSelect = () => {
         $(this).toggleClass(`selected`);
         $(this).siblings().toggleClass(`notSelected`);
         // warn the user that they chose an image
-        const userWarning = `
-            <div class="userWarningContainer">
-                <p class="userWarning">Good choice!</p>
-            </div>`
         app.userSelectWarning();
         // SELECTS OTHER IMAGES
         if ($('li').hasClass(`notSelected`)) {
