@@ -141,6 +141,19 @@ app.scrolling = () => {
     });
 }
 
+// FH added *************
+app.errorHandling = () => {
+    $(`ul`).on(`click`, `li`, () => {
+        $('li').hasClass(`selected`) ?
+            (console.log('PICK ANOTHER, already selected'),
+                alert(`already selected`)
+            )
+            : console.log(`not selected`);
+    });
+}
+// **********************
+
+
 // init FUNCTION Calls
 app.init = () => {
     app.scrolling();
@@ -148,7 +161,8 @@ app.init = () => {
     app.themeSelect();
     app.firstSelect();
     app.secondSelect();
-
+    // FH added **************
+    app.errorHandling();
 }
 
 
