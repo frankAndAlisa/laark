@@ -828,34 +828,6 @@ h1 span {
   border: 5px solid #A03B1C;
 }
 
-<<<<<<< HEAD
-.displayUserOptions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-transform: uppercase;
-  margin-top: 20px;
-}
-
-.displayUserOptions a {
-  color: #AEAEB3;
-  font-size: 2.3rem;
-  margin: 5px 0;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-}
-
-.displayUserOptions a .fas {
-  padding-right: 10px;
-}
-
-.displayUserOptions a:hover {
-  font-size: 2.6rem;
-=======
 .userOptions {
   -ms-grid-column: 1;
   -ms-grid-column-span: 13;
@@ -904,7 +876,6 @@ h1 span {
 .searchButton {
   margin: 0 auto;
   margin-bottom: 5vh;
->>>>>>> d2267d2d320951611ce69540c018d6ba9ea87318
 }
 
 @media (max-width: 1366px) {

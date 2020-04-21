@@ -110,16 +110,15 @@ app.secondSelect = () => {
         $(`.galleryContainer h3`).html(`Great, images are selected!`);
         // replacing the third image with a different one 
         const thirdArray = app.randomArray.slice(8, 9);
-        const object = $(`ul`).children();
-
+        const imgLink = $(`img`).attr(`src`);
         app.displayArtInitial(thirdArray);
         $(`.notSelected`).remove();
         $(`li`).addClass(`selected`);
-        const highRes = $(`.selected img`).attr(`src`);
+        // const highRes = $(`.selected img`).attr(`src`);
         if ($(`ul`).children().hasClass(`selected`)) {
             $(`.displayUserOptions`).append(`
                 <a target="_blank" class="addGall" href="#"><i class="fas fa-plus-square"></i>Add to Gallery</a>
-                <a target="_blank" class="highRes" href="${highRes}"><i class="fas fa-search-plus"></i>View Image in HR</a>
+                <a target="_blank" class="highRes" href="${imgLink}"><i class="fas fa-search-plus"></i>View Image in HR</a>
             `).addClass(`animated fadeInUp`)
             }
     });
