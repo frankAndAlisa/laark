@@ -133,14 +133,6 @@ app.errorHandling = () => {
     });
 }
 
-// display user options
-// app.displayUserOptions = () => {
-//     $(`.userOptions`).append(`
-//         <p>Add to Personal Gallery</p>
-//         <p>View image larger</p>
-//     `);
-// }
-
 // smooth scrolling
 app.scrolling = () => {
     $(`.scrollEffect`).on(`click`, function () {
@@ -153,7 +145,6 @@ app.init = () => {
     app.scrolling();
     app.dropdownMenu();
     app.themeSelect();
-    // app.displayUserOptions();
     app.firstSelect();
     app.secondSelect();
     app.errorHandling();
