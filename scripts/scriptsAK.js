@@ -72,19 +72,38 @@ app.displayArtInitial = (artpieces) => {
     artpieces.forEach((artWork) => {
         const imageLink = artWork.webImage;
         const altText = artWork.longTitle;
+        const viewInMuseum = artWork.links.web; 
         app.imageKey = artWork.id;
         const insertImage = `<img src="${imageLink.url}" alt="${altText}">`;
         // adding the hover effect
-        const descriptionMask = `<div class="mask"></div>`
+        const descriptionOfArt = `
+            <div class="mask"></div> 
+            <p class="descriptionOfArt">${altText}</p>`
+        // adding the link to view the art piece on the website 
+        const linkToArt = `
+            <div class="linkToArtContainer">
+                <a class="linkToArt" href="${viewInMuseum}">Look at the painting on the official website</a>
+            <div>`
         // dynamically appending to the DOM
         $(`.imageContainer`).append(`
             <li class="artWorks" data-imageref="${app.imageKey}">
                 ${insertImage}
-                ${descriptionMask}
+                ${descriptionOfArt}
+                ${linkToArt}
             </li>
         `);
         // $(insertImage).appendTo(`.imageContainer li`);
     })
+}
+
+app.userSelectWarning = () => {
+    const userWarning = `
+        <div class="userWarningContainer">
+            <p class="userWarning">Good choice!</p>
+        </div>`
+    if ($(`li`).hasClass(`selected`)) {
+        $(userWarning).appendTo(`.selected`).hide().fadeIn(1000);
+    }
 }
 
 // SELECTS First image
@@ -94,7 +113,12 @@ app.firstSelect = () => {
         // console.log(app.imageKey);
         $(this).toggleClass(`selected`);
         $(this).siblings().toggleClass(`notSelected`);
-
+        // warn the user that they chose an image
+        const userWarning = `
+            <div class="userWarningContainer">
+                <p class="userWarning">Good choice!</p>
+            </div>`
+        app.userSelectWarning();
         // SELECTS OTHER IMAGES
         if ($('li').hasClass(`notSelected`)) {
             // Clears other images
@@ -107,9 +131,6 @@ app.firstSelect = () => {
             app.displayArtInitial(secondArray);
             $(this).siblings().toggleClass(`notSelected`);
         }
-        console.log(`image select is working`);
-
-        // HIDE ME AFTER 1st SELECTION
     });
 }
 
@@ -124,10 +145,20 @@ app.secondSelect = () => {
         app.displayArtInitial(thirdArray);
         $(`.notSelected`).remove();
         console.log(`image select is working again`);
+        app.userSelectWarning();
+        app.displayUserOptions();
+    });
+}
+
+app.errorHandling = () => {
+    $(`ul`).on(`click`, `li`, () => {
+        $('li').hasClass(`selected`) ?
+            console.log('PICK ANOTHER, already selected') : console.log(`not selected`);
     });
 }
 
 app.displayUserOptions = () => {
+    console.log(`working`)
     // OFFER user options,
     // revise the DOM
     // … allow OVERLAY, on IMAGES, once initial three searches are completed
@@ -146,9 +177,10 @@ app.init = () => {
     app.scrolling();
     app.dropdownMenu();
     app.themeSelect();
+    app.userSelectWarning();
     app.firstSelect();
     app.secondSelect();
-
+    app.errorHandling();
 }
 
 
