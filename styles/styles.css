@@ -709,11 +709,7 @@ h1 span {
 }
 
 .artWorks {
-<<<<<<< HEAD
-  background-color: #6B686C;
-=======
   background-color: #15171A;
->>>>>>> c0e15c3f9ccfebad2688dcaef7d19e7fb5c6d61d
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
