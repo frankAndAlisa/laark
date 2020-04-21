@@ -150,6 +150,13 @@ app.secondSelect = () => {
     });
 }
 
+app.errorHandling = () => {
+    $(`ul`).on(`click`, `li`, () => {
+        $('li').hasClass(`selected`) ?
+            console.log('PICK ANOTHER, already selected') : console.log(`not selected`);
+    });
+}
+
 app.displayUserOptions = () => {
     console.log(`working`)
     // OFFER user options,
@@ -173,7 +180,7 @@ app.init = () => {
     app.userSelectWarning();
     app.firstSelect();
     app.secondSelect();
-
+    app.errorHandling();
 }
 
 
