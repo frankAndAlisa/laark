@@ -1,7 +1,8 @@
 //Media Queries
 
+
 // FH Added ****************************
-@media (max-width: 1024px) {
+@media (max-width: 1366px) {
     // Global
     h1{
         font-size: 19rem;
@@ -46,7 +47,41 @@
         justify-self: center;
     }
 }
+
+@media (max-width: 768px) {
+    // Global
+    h1{
+        font-size: 15rem;
+    }
+    h2{
+        font-size: 4rem;
+    }
+
+        // Enter & Start Button
+    h4 {
+        font-size: 2.4rem;
+    }
+
+        // Description Section
+    .description .descriptionContent .bigger {
+        font-size: 4.8rem;
+    }
+    p{
+        font-size: 1.8rem;
+        line-height: 25px;
+        margin: 12px 0;
+    }
+    .description .descriptionContent .descriptionCredit p {
+        font-size: 1.4rem;
+    }
+}
+
 // *************************************
+
+
+
+
+
 
 
 @media (max-width: 320px) {

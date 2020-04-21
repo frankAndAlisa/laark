@@ -1,10 +1,10 @@
 .description {
-    min-height: 100vh;
     background: linear-gradient( 170deg, $darkColor 30%, $primaryLightGrey 17.5%,  $primaryLightGrey 17.5%,  $primaryLightGrey 17.5%, $primaryLightGrey 17.5%);
 
     .descriptionHeading {
         grid-column: 1 / 14;
         grid-row: 1 / 4;
+        // padding-top: 5%;
         align-self: center;
         h2 {
             color: $primaryLightGrey;
@@ -18,12 +18,13 @@
     
     .descriptionContent {
         grid-column: 2 / 12;
-        grid-row: 5/ 13;
+        grid-row: 5/ 12;
         align-self: center;
-        padding-bottom: 5%;
+        padding-top: 4%;
+        padding-bottom: 4%;
         padding-left: 2%;
         justify-self: center;   //FH added line to center block
-        width: 88%;             //narrower block of text
+        width: 100%;             //narrower block of text
 
         .bigger {
             font-size: 5.5rem;
@@ -53,12 +54,13 @@
 
 .startButton {
     grid-column: 1 / 14;
-    grid-row: 13 / 14;
+    grid-row: 12 / 14;
     align-self: center;
 }
 
 .descriptionText {
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -66,6 +68,6 @@
     justify-items: left;
     align-items:center;
     // padding: 5% 0;
-    padding: 7vh 0;     //was padding: 5% 0;
+    padding: 0 0 5vh 0;     //was padding: 5% 0;
 }
 
