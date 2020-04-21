@@ -1,7 +1,5 @@
 .gallery {
     // FH removed gallery shapes, was deleted
-    min-height: 100vh;
-    width: 100%; 
     background-color: $darkColor; //fallback
 
     background: linear-gradient(170deg,
@@ -15,9 +13,11 @@
     // grid-template-rows: repeat(12, 1fr); was causing padding issue
     justify-items: center;
     align-items: center;
-    height: 100%;
     min-height: 100vh;
-    padding: 8vh 0 8vh 0;
+    height: 100%;
+    
+    // min-height: 100vh;
+    padding: 5vh 0; // FH was padding: 8vh 0 8vh 0;
         h3{
             grid-column: 1/ 14;
             grid-row: 1/ 4; // was 1/5
@@ -39,19 +39,24 @@
 .imageContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    grid-gap: 8vw;
+    grid-gap: 5%;      // FH was 8vw
     grid-column: 1/ 14;
-    grid-row: 4/ 8; // was 5/8
+    grid-row: 4/ 8;     // FH was 5/8
     justify-items: center;
-    align-items:start;
+    align-items: center;
     width: 100%;
+    min-height: 60vh;
     height: 100%;
     padding: 0;
 }
 
 .artWorks {
+    background-color: $secondaryDarkGrey;
+    justify-self: center;
+    align-self: center;      // FH was center
+    // max-width: 300px;    // FH commented out, allows img to be wider
+
     position: relative;
-    align-self: start; // was center
     max-width: 300px;
     width: 100%;
     height: 300px;
