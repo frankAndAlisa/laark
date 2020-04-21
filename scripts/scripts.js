@@ -118,8 +118,8 @@ app.secondSelect = () => {
         const highRes = $(`.selected img`).attr(`src`);
         if ($(`ul`).children().hasClass(`selected`)) {
             $(`.displayUserOptions`).append(`
-                <a class="addGall" href="#"><i class="fas fa-plus-square"></i>Add to Personal Gallery</a>
-                <a class="highRes" href="${highRes}"><i class="fas fa-search-plus"></i>View Image in High Resolution</a>
+                <a target="_blank" class="addGall" href="#"><i class="fas fa-plus-square"></i>Add to Gallery</a>
+                <a target="_blank" class="highRes" href="${highRes}"><i class="fas fa-search-plus"></i>View Image in HR</a>
             `).addClass(`animated fadeInUp`)
             }
     });
