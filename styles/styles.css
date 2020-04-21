@@ -709,7 +709,11 @@ h1 span {
 }
 
 .artWorks {
+<<<<<<< HEAD
   background-color: #6B686C;
+=======
+  background-color: #15171A;
+>>>>>>> c0e15c3f9ccfebad2688dcaef7d19e7fb5c6d61d
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
@@ -729,6 +733,7 @@ h1 span {
 .artWorks img {
   height: 100%;
   width: 100%;
+  display: block;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-transition: 0.4s all ease;
@@ -770,6 +775,7 @@ h1 span {
 
 .artWorks .linkToArtContainer .linkToArt {
   display: inline-block;
+  text-transform: uppercase;
   font-size: 1.8rem;
   line-height: 25px;
   color: #AEAEB3;
