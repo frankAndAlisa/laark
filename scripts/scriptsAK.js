@@ -143,7 +143,6 @@ app.displayUserOptions = () => {
     $(`.userOptions`).append(`
         <p>Add to Personal Gallery</p>
         <p>View image larger</p>
-        <p>Do another search</p>
     `);
     // OFFER user options,
     // revise the DOM
