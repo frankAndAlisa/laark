@@ -1008,12 +1008,8 @@ footer .footerWrapper .collegeName p {
   }
   .selectButton::after {
     content: '▶';
-    color: #AEAEB3;
     font-size: 2.8rem;
-    display: inline-block;
     margin-left: 15px;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     vertical-align: 10%;
   }
   .galleryContainer h3 {
@@ -1113,8 +1109,6 @@ footer .footerWrapper .collegeName p {
   .selectButton::after {
     content: '▶';
     font-size: 2rem;
-    margin-left: 15px;
-    vertical-align: 10%;
   }
   .underline {
     width: 300px;
@@ -1141,14 +1135,14 @@ footer .footerWrapper .collegeName p {
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 11.8rem;
+    font-size: 10.6rem;
   }
   h1 span {
-    margin: 0 -5.5rem;
+    margin: 0 -5.1rem;
   }
   .h2WUnderline h2 {
-    font-size: 5.4rem;
-    padding-left: 7%;
+    text-align: center;
+    font-size: 4.8rem;
   }
   .selectButton {
     font-size: 2.3rem;
