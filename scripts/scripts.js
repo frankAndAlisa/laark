@@ -120,6 +120,7 @@ app.secondSelect = () => {
                 <a class="addGall"><i class="fas fa-plus-square"></i>Add to Gallery</a>
             `).addClass(`animated fadeInUp`)
             $(`.highRes`).removeClass(`visuallyHidden`).addClass(`fadeInUp`)
+            $(`.searchButton`).removeClass(`visuallyHidden`).addClass(`fadeInUp`);
         }
         app.errorHandling();
     });
