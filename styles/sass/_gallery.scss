@@ -38,7 +38,7 @@
 .imageContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    grid-gap: 5%;      
+    grid-gap: 60px;      
     grid-column: 1/ 14;
     grid-row: 4/ 12;     
     justify-items: center;
@@ -55,9 +55,10 @@
     justify-self: center;
     align-self: center;     
     position: relative;
-    max-width: 300px;
+    max-width: 425px;
+    min-width: 325px;
     width: 100%;
-    height: 300px;
+    height: 375px;
     list-style: none;
     margin: 60px 0px 20px 0;
     transition: 0.5s all ease;
@@ -113,12 +114,12 @@
             transition: 0.4s all ease;
         }
     }
-    .userWarningContainer {
-        text-transform: uppercase;
-        font-weight: 700;
-        color: $primaryLightGrey;
-        text-align: center;
-    }
+    // .userWarningContainer {
+    //     text-transform: uppercase;
+    //     font-weight: 700;
+    //     color: $primaryLightGrey;
+    //     text-align: center;
+    // }
 }
 
 //Image Hover and Active states

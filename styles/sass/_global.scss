@@ -1,15 +1,19 @@
 // Global Styles
 html {
     font-size: 62.5%;
-    // added lines 5-8, smoother CSS scrolling
     scroll-behavior: smooth;
-    // transition: all 1s ease;
 }
 
 body {
     font-family: $secondaryFont;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 1440px;
+    max-width: 90%;
 }
 
 header,
@@ -21,6 +25,7 @@ header,
     max-width: 100vw;
     width: 100%;
 }
+
 
 //  TEXT STYLING
 h1,
@@ -57,15 +62,8 @@ h4{
 }
 
 p {
-    font-size: 2.5rem;
-    line-height: 40px;
-}
-
-// Corrected the wrapper behaviour
-.wrapper {
-    margin: 0 auto;
-    width: 1440px;
-    max-width: 90%;
+    font-size: 2.3rem;
+    line-height: 37px;
 }
 
 a {

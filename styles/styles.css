@@ -256,6 +256,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.wrapper {
+  margin: 0 auto;
+  width: 1440px;
+  max-width: 90%;
+}
+
 header,
 .description,
 .selection,
@@ -300,14 +306,8 @@ h4 {
 }
 
 p {
-  font-size: 2.5rem;
-  line-height: 40px;
-}
-
-.wrapper {
-  margin: 0 auto;
-  width: 1440px;
-  max-width: 90%;
+  font-size: 2.3rem;
+  line-height: 37px;
 }
 
 a {
@@ -492,7 +492,7 @@ h1 span {
       -ms-grid-row-align: center;
       align-self: center;
   padding-top: 4%;
-  padding-bottom: 4%;
+  padding-bottom: 1%;
   padding-left: 2%;
   -ms-grid-column-align: center;
       justify-self: center;
@@ -500,7 +500,7 @@ h1 span {
 }
 
 .description .descriptionContent .bigger {
-  font-size: 5.5rem;
+  font-size: 5.4rem;
   font-weight: 700;
 }
 
@@ -694,7 +694,7 @@ h1 span {
   display: grid;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 5%;
+  grid-gap: 60px;
   -ms-grid-column: 1;
   -ms-grid-column-span: 13;
   grid-column: 1/ 14;
@@ -719,9 +719,10 @@ h1 span {
       -ms-grid-row-align: center;
       align-self: center;
   position: relative;
-  max-width: 300px;
+  max-width: 425px;
+  min-width: 325px;
   width: 100%;
-  height: 300px;
+  height: 375px;
   list-style: none;
   margin: 60px 0px 20px 0;
   -webkit-transition: 0.5s all ease;
@@ -781,13 +782,6 @@ h1 span {
   text-align: center;
   -webkit-transition: 0.4s all ease;
   transition: 0.4s all ease;
-}
-
-.artWorks .userWarningContainer {
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #AEAEB3;
-  text-align: center;
 }
 
 .artWorks:hover .descriptionOfArt {
@@ -914,6 +908,7 @@ h1 span {
 @media (max-width: 1366px) {
   h1 {
     font-size: 19rem;
+    margin-top: -3%;
   }
   h2 {
     font-size: 5.5rem;
@@ -933,7 +928,7 @@ h1 span {
     font-size: 1.6rem;
   }
   .selectButton {
-    font-size: 4rem;
+    font-size: 3.6rem;
     letter-spacing: 0.3rem;
   }
   .option {
@@ -942,10 +937,68 @@ h1 span {
   .option:hover {
     font-size: 5.8rem;
   }
+  .selectButton::after {
+    content: '▶';
+    color: #AEAEB3;
+    font-size: 2.8rem;
+    display: inline-block;
+    margin-left: 15px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    vertical-align: 10%;
+  }
   .galleryContainer h3 {
     font-size: 5.8rem;
     -ms-grid-column-align: center;
         justify-self: center;
+  }
+  .artWorks {
+    max-width: 380px;
+    min-width: 300px;
+    height: 350px;
+    margin: 0 0 30px 0;
+  }
+  .displayUserOptions a {
+    font-size: 2rem;
+    margin: 3px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1133px) {
+  .galleryContainer h3 {
+    font-size: 5.6rem;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    text-align: center;
+    padding-bottom: 4%;
+  }
+  .imageContainer {
+    min-height: 60vh;
+    padding-bottom: 80px;
+  }
+  .artWorks {
+    margin: 10px 0 15px 0;
+  }
+  .displayUserOptions a {
+    font-size: 2rem;
+    margin: 3px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 980px) {
+  .headerContainer {
+    justify-items: center;
+  }
+  h1 {
+    margin-top: -4%;
+  }
+  .optionsBox {
+    width: 70%;
+  }
+  .underline {
+    width: 300px;
   }
 }
 
@@ -953,8 +1006,11 @@ h1 span {
   h1 {
     font-size: 15rem;
   }
+  h1 span {
+    margin: 0 -6rem;
+  }
   h2 {
-    font-size: 4rem;
+    font-size: 4.4rem;
   }
   h4 {
     font-size: 2.4rem;
@@ -970,6 +1026,92 @@ h1 span {
   .description .descriptionContent .descriptionCredit p {
     font-size: 1.4rem;
   }
+  .selectButton {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+    padding: 5px 15px;
+  }
+  .option {
+    font-size: 4.4rem;
+  }
+  .option:hover {
+    font-size: 4.8rem;
+  }
+  .optionsBox {
+    width: 70%;
+    margin-top: 10px;
+  }
+  .selectButton::after {
+    content: '▶';
+    font-size: 2rem;
+    margin-left: 15px;
+    vertical-align: 10%;
+  }
+  .underline {
+    width: 300px;
+  }
+  .galleryContainer h3 {
+    font-size: 4rem;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    padding-bottom: 4%;
+  }
+  .artWorks {
+    margin: 0 0 15px 0;
+    max-width: 320px;
+    min-width: 280px;
+    width: 100%;
+    height: 300px;
+  }
+  .displayUserOptions a {
+    font-size: 1.8rem;
+    margin: 2px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 11.8rem;
+  }
+  h1 span {
+    margin: 0 -5.5rem;
+  }
+  .h2WUnderline h2 {
+    font-size: 5.4rem;
+    padding-left: 7%;
+  }
+  .selectButton {
+    font-size: 2.3rem;
+    letter-spacing: 0rem;
+    padding: 5px 12px;
+  }
+  .option {
+    font-size: 4.4rem;
+  }
+  .option:hover {
+    font-size: 4.8rem;
+  }
+  .optionsBox {
+    width: 86%;
+    margin-top: 10px;
+  }
+  .selectButton::after {
+    content: '▶';
+    font-size: 2rem;
+    margin-left: 15px;
+    vertical-align: 10%;
+  }
+  .underline {
+    width: 280px;
+  }
+  .galleryContainer h3 {
+    font-size: 3.6rem;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    text-align: center;
+    padding-bottom: 4%;
+  }
 }
 
 @media (max-width: 320px) {
@@ -979,9 +1121,33 @@ h1 span {
   h1 span {
     margin: 0 -5rem;
   }
-  h2 {
-    font-size: 5.5rem;
+  .h2WUnderline h2 {
+    font-size: 5rem;
     -ms-grid-column-align: center;
         justify-self: center;
+  }
+  .selectButton {
+    font-size: 1.8rem;
+    letter-spacing: 0rem;
+    padding: 4px 4px;
+  }
+  .option {
+    font-size: 4.4rem;
+  }
+  .option:hover {
+    font-size: 4.8rem;
+  }
+  .optionsBox {
+    width: 90%;
+    margin-top: 10px;
+  }
+  .selectButton::after {
+    content: '▶';
+    font-size: 1.8rem;
+    margin-left: 8px;
+    vertical-align: 0%;
+  }
+  .underline {
+    width: 250px;
   }
 }
