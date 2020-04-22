@@ -646,6 +646,10 @@ h1 span {
   background: linear-gradient(170deg, #15171a 0%, #15171a 70%, #a03b1c 70%, #a03b1c 100%);
 }
 
+.galleryHidden {
+  display: none;
+}
+
 .galleryContainer {
   display: -ms-grid;
   display: grid;
@@ -793,8 +797,8 @@ h1 span {
 
 .artWorks:hover .mask {
   opacity: 1;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
 }
 
 .artWorks:hover img {
@@ -876,6 +880,35 @@ h1 span {
 .searchButton {
   margin: 0 auto;
   margin-bottom: 5vh;
+}
+
+.displayUserOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.displayUserOptions a {
+  color: #AEAEB3;
+  cursor: pointer;
+  font-size: 2.3rem;
+  margin: 5px 0;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+
+.displayUserOptions a .fas {
+  padding-right: 10px;
+}
+
+.displayUserOptions a:hover {
+  font-size: 2.6rem;
 }
 
 @media (max-width: 1366px) {
