@@ -1,0 +1,42 @@
+footer {
+    background-color: $secondaryDarkGrey;
+    padding: 15px 30px 0px 30px;
+    .footerWrapper {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        h4, a {
+            margin: 5px 0px;
+            font-size: 1.7rem;
+            transition: 0.5s all ease;
+        }
+        a:hover {
+            font-size: 1.9rem;
+        }
+        .contentContainer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .creators, .credits, .api {
+                margin: 0px 10px;
+            }
+            .names {
+                padding-top: 10px;;
+                display: flex;
+                flex-direction: column;
+                a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: $primaryLightGrey;
+                }
+            }
+        }
+        .collegeName {
+            margin: 0 auto;
+            p {
+                font-size: 1.4rem;
+                margin-top: 10px;
+            }
+        }
+    }
+}

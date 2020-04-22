@@ -911,6 +911,75 @@ h1 span {
   font-size: 2.6rem;
 }
 
+footer {
+  background-color: #6B686C;
+  padding: 15px 30px 0px 30px;
+}
+
+footer .footerWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .footerWrapper h4, footer .footerWrapper a {
+  margin: 5px 0px;
+  font-size: 1.7rem;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+
+footer .footerWrapper a:hover {
+  font-size: 1.9rem;
+}
+
+footer .footerWrapper .contentContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .footerWrapper .contentContainer .creators, footer .footerWrapper .contentContainer .credits, footer .footerWrapper .contentContainer .api {
+  margin: 0px 10px;
+}
+
+footer .footerWrapper .contentContainer .names {
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .footerWrapper .contentContainer .names a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #AEAEB3;
+}
+
+footer .footerWrapper .collegeName {
+  margin: 0 auto;
+}
+
+footer .footerWrapper .collegeName p {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
 @media (max-width: 1366px) {
   h1 {
     font-size: 19rem;
