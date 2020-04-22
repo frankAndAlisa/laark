@@ -41,11 +41,8 @@
     }
     .selectButton::after {
     content: '▶';
-    color: $primaryLightGrey;
     font-size: 2.8rem;
-    display: inline-block;
     margin-left: 15px;
-    transition: all 0.5s ease;
     vertical-align: 10%;
 }
 
@@ -91,10 +88,6 @@
 }
 
 
-
-
-
-
 @media (max-width: 980px) {
         // Global
     .headerContainer {
@@ -124,12 +117,12 @@
         font-size: 4.4rem;
     }
 
-        // Enter & Start Button
+    // Enter & Start Button
     h4 {
         font-size: 2.4rem;
     }
 
-        // Description Section
+    // Description Section
     .description .descriptionContent .bigger {
         font-size: 4.8rem;
     }
@@ -140,9 +133,9 @@
     }
     .description .descriptionContent .descriptionCredit p {
         font-size: 1.4rem;
-        // margin-top: -3%;
     }
-            // DropDown
+    
+    // DropDown
     .selectButton {
         font-size: 2.5rem;
         letter-spacing: 0.2rem;
@@ -162,8 +155,8 @@
     .selectButton::after {
     content: '▶';
         font-size: 2rem;
-        margin-left: 15px;
-        vertical-align: 10%;
+        // margin-left: 15px;
+        // vertical-align: 10%;
     }
     .underline {
         width: 300px;
@@ -174,17 +167,7 @@
         justify-self: center;
         padding-bottom: 4%;
     }
-//     .imageContainer {
-//     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));    
-//     grid-column: 1/ 14;
-//     grid-row: 4/ 12;     
-//     justify-items: center;
-//     align-items: center;
-//     width: 100%;
-//     min-height: 60vh;
-//     height: 100%;
-//     padding-bottom: 100px;
-// }
+
     .artWorks {
         margin: 0 0 15px 0;
         max-width: 320px;
@@ -200,18 +183,17 @@
 
 }
 
-// *************************************
 
 @media (max-width: 480px){
     h1{
-        font-size: 11.8rem;
+        font-size: 10.6rem;
                 span {
-            margin: 0 -5.5rem;
+            margin: 0 -5.1rem;
         }
     }
     .h2WUnderline h2{
-        font-size: 5.4rem;
-        padding-left: 7%
+        text-align:center;
+        font-size: 4.8rem;
     }
 
         // DropDown
@@ -251,10 +233,6 @@
 }
 
 
-
-
-
-
 @media (max-width: 320px) {
     h1 {
         font-size: 10.5rem;
@@ -267,7 +245,7 @@
         justify-self: center;
     }
 
-            // DropDown
+    // DropDown
     .selectButton {
         font-size: 1.8rem;
         letter-spacing: 0rem;
